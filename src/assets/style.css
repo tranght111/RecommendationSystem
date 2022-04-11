@@ -9,7 +9,6 @@
 @import url('https://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600,700');
 @import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
 @import url('https://fonts.googleapis.com/css?family=Raleway:100,400,600,700,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto+Slab&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
 
@@ -45,8 +44,9 @@ html {
 body {
      color: #666666;
      font-size: 14px;
-     font-family: 'Lora', serif;
-     /* 'Roboto Slab', serif; */
+     font-family: 'Roboto Slab', serif;
+     /* 'Lora', serif; */
+     
      line-height: 1.80857;
      font-weight: normal;
 }
@@ -209,11 +209,11 @@ button {
 }
 
 .button1 {
-	width: 200px;
-	height: 70px;
+	width: 270px;
+	height: 100px;
 	cursor: pointer;
-	font-size: 20px;
-	font-weight: bold;
+	font-size: 28px;
+	font-weight: 500;
 	color: white;
 	background: #042431;
 	border: 2px solid #042431;
@@ -314,9 +314,9 @@ button:focus {
 }
 
 .navigation.navbar-dark .navbar-nav .nav-link {
-     padding: 0px 20px;
+     padding: 0px 20px 0 20px;
      color: #fff;
-     font-size: 16px;
+     font-size: 20px;
      line-height: 20px;
      text-transform: uppercase;
 }
@@ -334,7 +334,8 @@ button:focus {
 }
 
 .navbar-expand-md .navbar-nav {
-     padding-right: 10px;
+     padding-right: 150px;
+     padding-top: 10px;
 }
 
 .header_information {
@@ -396,6 +397,7 @@ button:focus {
      width: 100%;
      background: #fff;
      padding: 20px 0px;
+     font-family: 'Roboto Slab', serif;
 }
 
 .logo a {
@@ -487,7 +489,6 @@ button:focus {
 
 .titlepage {
      text-align: left;
-     padding-bottom: 10px;
 }
 
 .titlepage h2 {
@@ -616,71 +617,17 @@ button:focus {
 
 /** mobile section **/
 
-
-/** clients section **/
-
-.clients {
-     margin-top: 40px;
-     padding-top: 60px;
-}
-
-.clients .titlepage h2 {
-     color: #202021;
-}
-
-.clients .titlepage span {
-     margin-left: 56px;
-}
-
-.clients_box {
-     text-align: center;
-     background: #e2e3e3;
-     padding: 50px 15px;
-     border-radius: 15px;
-     position: relative;
-}
-
-.clients_box p {
-     font-size: 17px;
-     line-height: 35px;
-}
-
-/* .clients_box::after {
-     position: absolute;
-     content: "";
-     width: 42px;
-     height: 67px;
-     bottom: -65px;
-     background: url(../images/cli_cross.png);
-     background-repeat: no-repeat;
-} */
-
-.jonu {
-     padding-top: 72px;
-     text-align: center;
-}
-
-.jonu h3 {
-     padding: 0px 0px 0px 0px;
-     color: #0b0503;
-     font-size: 25px;
-}
-
-.jonu strong {
-     display: block;
-     color: #00aeef;
-     font-size: 17px;
-     padding-bottom: 50px;
-}
-
-
-/** end clients section **/
-
 /* middle section */
+
+.middle {
+     padding: 10px 0px 50px 0px;
+     font-family: 'Roboto Slab', serif;
+}
+
 .middle .titlepage h3 {
-     padding: 15px 20px;
+     padding: 38px 20px;
      font-weight: 400;
-     font-size: x-large;
+     font-size: large;
 }
 
 .middle .titlepage1 {
@@ -689,9 +636,9 @@ button:focus {
 
 
 .middle .titlepage1 h3 {
-     padding: 5px 20px;
+     padding: 12px 20px;
      font-weight: 400;
-     font-size: x-large;
+     font-size: large;
 }
 
 .middle .titlepage2 {
@@ -699,14 +646,21 @@ button:focus {
 }
 
 .middle .titlepage2 h3 {
-     padding: 15px 20px;
+     padding: 30px 20px;
      font-weight: 400;
-     font-size: x-large;
+     font-size: large;
 }
 
-.middle .icon {
-     padding: 50px 0 50px 0;
-     font-size: 4em;
+.middle .icon1 {
+     padding: 0px 0px 5px 150px;
+     font-size: 48px;
+     color: rgb(255, 138, 0);
+}
+
+.middle .icon2 {
+     padding: 0px 0px 5px 230px;
+     font-size: 48px;
+     color: rgb(255, 138, 0);
 }
 
 /* end middle section */
@@ -890,14 +844,18 @@ ul.cont li {
      z-index: -1;
      clear: both;
      /* background-image: url('images/mo_bg.jpg'); */
-     background-repeat: repeat;
+     background-repeat: no-repeat;
      background-attachment: fixed;
      background-position: center center;
      background-color: #042431;
+     font-family: 'Roboto Slab', serif;
    }
    
    .parallax2 {
-     background-image: url('images/banner.jpg');
+     background-image: url('images/about_bg.png');
+     height: 300px;
+     
+     background-size: cover;
    }
    
    .parallax-section .content, .top-slider .content-header, .home-slider {
@@ -906,7 +864,11 @@ ul.cont li {
    }
    
    .parallax-section .content-header, .home-slider .content-header {
-     padding: 100px 50px 100px 50px;
+     padding: 50px 150px 150px 130px;
+   }
+
+   .content-header2 {
+        padding: 0;
    }
    
    .parallax2 .content {
@@ -921,9 +883,9 @@ ul.cont li {
    .content-header h2,
    .parallax-section .content h3,
    .content-header h3 {
-        padding: 0 20px 0 20px;
+        padding: 0 20px 20px 20px;
      color: rgb(255, 138, 0);
-     font-weight: bold;
+     /* font-weight: bold; */
    }
    
    .parallax-section h2 > span,
@@ -955,6 +917,8 @@ ul.cont li {
      margin-top: -100px;
    }
 
-   .middle {
-        padding: 10px 50px 50px 50px;
+   .affix {
+        top: 0;
+        width: 100%;
+        z-index: 9999 !important;
    }
