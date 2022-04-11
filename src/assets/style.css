@@ -129,7 +129,7 @@ ul,
 li,
 ol {
      margin: 0px;
-     padding: 0px;
+     padding: 0;
      list-style: none;
 }
 
@@ -319,6 +319,12 @@ button:focus {
      font-size: 20px;
      line-height: 20px;
      text-transform: uppercase;
+}
+
+.navigation.navbar li, ul {
+     margin: 0px;
+     padding-left: 100px;
+     list-style: none;
 }
 
 .navigation.navbar-dark .navbar-nav .nav-link:focus,
@@ -781,6 +787,10 @@ button:focus {
      color: #fff;
 }
 
+ul.cont {
+     padding: 0;
+}
+
 ul.cont li {
      color: #8a9397;
      font-size: 17px;
@@ -921,4 +931,9 @@ ul.cont li {
         top: 0;
         width: 100%;
         z-index: 9999 !important;
+   }
+
+   .majors li, ol {
+        list-style: decimal;
+        padding: 3px 0 0 20px;
    }

@@ -24,10 +24,10 @@
                            <div class="collapse navbar-collapse" id="navbarsExample04">
                               <ul class="navbar-nav mr-auto">
                                  <li class="nav-item active">
-                                    <a class="nav-link" href="/#/Home"> TRANG CHỦ  </a>
+                                    <router-link to="/" tag="span" class="nav-link"> TRANG CHỦ  </router-link>
                                  </li> 
                                  <li class="nav-item">
-                                    <a class="nav-link" href="/#/">CHUYÊN NGÀNH</a>
+                                    <router-link to="/Majors" tag="span" class="nav-link" >CHUYÊN NGÀNH</router-link>
                                  </li>
                                  <li class="nav-item">
                                     <router-link to="/About" tag="span" class="nav-link" >GIỚI THIỆU</router-link>
