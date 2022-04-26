@@ -310,11 +310,12 @@ button:focus {
 
 .navigation.navbar {
      float: right;
-     padding: 27px;
+     /* padding: 20px; */
 }
 
+
 .navigation.navbar-dark .navbar-nav .nav-link {
-     padding: 0px 20px 0 20px;
+     padding: 0px 80px 0 20px;
      color: #fff;
      font-size: 20px;
      line-height: 20px;
@@ -323,7 +324,7 @@ button:focus {
 
 .navigation.navbar li, ul {
      margin: 0px;
-     padding-left: 100px;
+     /* padding-left: 50px; */
      list-style: none;
 }
 
@@ -340,8 +341,8 @@ button:focus {
 }
 
 .navbar-expand-md .navbar-nav {
-     padding-right: 150px;
-     padding-top: 10px;
+     padding-right: 50px;
+     /* padding-top: 10px; */
 }
 
 .header_information {
@@ -398,20 +399,22 @@ button:focus {
 
 
 /*--------------------------------------------------------------------- layout new css ---------------------------------------------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
 
 .header {
      width: 100%;
      background: #fff;
      padding: 20px 0px;
-     font-family: 'Roboto Slab', serif;
+     font-family: 'Merriweather', serif;
 }
 
 .logo a {
-     font-size: 40px;
+     font-size: 25px;
      font-weight: bold;
      text-transform: uppercase;
-     color: #fff;
+     color: #4c7397;
      line-height: 40px;
+     margin-left: 30px;
 }
 
 
@@ -580,7 +583,7 @@ button:focus {
 /** mobile section **/
 
 .mobile {
-     background: url(../assets/images/mo_bg.jpg);
+     /* background: url(../assets/images/mo_bg.jpg); */
      background-repeat: no-repeat;
      background-size: 100% 100%;
      padding: 90px 0;

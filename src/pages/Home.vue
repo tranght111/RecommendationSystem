@@ -1,99 +1,53 @@
 <template>
-
-   <!-- Parallax Section -->
-      <div class="parallax-section parallax1">
-         <div class="grid grid-pad">
-             <div class="col-1-1">
-                  <div class="content content-header" >
-                     <h2>Hệ thống tư vấn chọn chuyên ngành cho sinh viên khoa Công nghệ Thông tin 
-                        trường Đại học Khoa học Tự nhiên</h2>
-                     <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, fuga, consectetur sequi consequuntur nisi placeat ullam maiores perferendis. Quod, nihil reiciendis saepe optio libero minus et beatae ipsam reprehenderit sequi.</p> -->
-                     <!-- <a target="_blank" class="btn btn-ghost" href="#">Find Out More</a> -->
-                 </div>
-             </div>
-         </div>
-     </div>
-<!-- End Parallax Section -->
-
-<!-- CurveUp -->
-     <svg class="curveUpColor" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewBox="0 0 100 100" preserveAspectRatio="none">
-         <path d="M0 100 C 20 0 50 0 100 100 Z"></path>
-     </svg>
-
-   <!-- middle-->
-      <div id="middle" class="middle">
-         <div class="container">
-         <div class="row d-flex">
-            <div class="col-md-8">
-            <div class="row">
-               <div class="col-md-4 col-sm-4">
-                  <button class="button1 noselect">Tải lên bảng điểm</button>
-                  
-               </div>
-               <div class="col-md-8 col-sm-8">
-                  <div class="titlepage">
-                     <h3>Tải lên bảng điểm của bạn lấy từ portal</h3>
-                     
-                  </div>
-               </div>
-               
-            </div>
-            <!-- icon -->
-            <div class="row">
-               <div class="col-md-2">
-                  <div class="icon1">
-                     <i class="fas fa-arrow-down"></i>
-                  </div>
-               </div>
-            </div>
-
-            <div class="row">
-               <div class="col-md-1 col-sm-1">
-                  
-               </div>
-               <div class="col-md-4 col-sm-4">
-                  <button class="button1 noselect">Làm bài đánh giá</button>
-                  
-               </div>
-               <div class="col-md-7 col-sm-7">
-                  <div class="titlepage1">
-                     <h3>Làm bài đánh giá định hướng nghề nghiệp để xác định nghề nghiệp/ hướng phát triển thích hợp với bạn</h3>
-                  </div>
-               </div>
-            </div>
-            <!-- icon -->
-            <div class="row">
-               <div class="col-md-2">
-                  <div class="icon2">
-                     <i class="fas fa-arrow-down"></i>
-                  </div>
-               </div>
-            </div>
-
-            <div class="row">
-               <div class="col-md-2 col-sm-2">
-                  
-               </div>
-               <div class="col-md-4 col-sm-4">
-                  <button class="button1 noselect">Xem kết quả</button>
-                  
-               </div>
-               <div class="col-md-6 col-sm-6">
-                  <div class="titlepage2">
-                     <h3>Hiển thị chuyên ngành phù hợp với bạn</h3>
-                  </div>
-               </div>
-            </div>
-            </div>
-
-            <div class="col-md-4">
-               <img src="@/assets/images/img_job.png"/>
-            </div>
-         </div>
-         </div>
+   <section class="u-align-center u-clearfix u-image u-shading u-section-1" src="" id="sec-6139" data-image-width="150" data-image-height="91">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h1 class="u-align-left u-text u-text-palette-2-light-2 u-title u-text-1">Bạn là sinh viên năm 2 CNTT nhưng chưa có&nbsp;định hướng&nbsp;để chọn chuyên ngành? </h1>
+        <h4 class="u-align-left-md u-align-left-sm u-align-left-xs u-align-right-lg u-align-right-xl u-text u-text-palette-2-light-2 u-text-2">Chưa biết về thông tin, nội dung giảng dạy hay hướng phát triển của các chuyên ngành?</h4>
+        <a href="Trang-chủ.html#carousel_bc78" data-page-id="1791089" class="u-btn u-button-style u-palette-2-base u-btn-1">tìm hiểu ngay</a>
       </div>
+    </section>
+    <section class="u-align-center u-clearfix u-palette-5-light-2 u-section-2" id="carousel_bc78">
       
-      <!-- end middle-->
+      <img src="../assets/images/d737d4872a1a4ece756515360bbb03ef400fd73f3baa46b51ff3a51122705d25804d572479b39dbeaa15d97a1fe507d42ddd8c56326ae273b771fe_1280.jpg" alt="" class="u-expanded-width u-image u-image-default u-image-1" data-image-width="1280" data-image-height="853">
+      <div class="u-list u-list-1">
+        <div class="u-repeater u-repeater-1">
+          <div class="u-container-style u-list-item u-palette-1-base u-repeater-item u-list-item-1">
+            <div class="u-container-layout u-similar-container u-container-layout-1">
+              <h3 class="u-align-center u-custom-font u-font-montserrat u-text u-text-black u-text-1">Bước 1</h3>
+              <h4 class="u-align-center u-custom-font u-font-montserrat u-text u-text-2">Tải lên bảng&nbsp;điểm</h4>
+              <p class="u-align-center u-text u-text-3"> Tải lên bảng điểm của bạn lấy từ Portal<br>
+                <br>
+                <br>
+                <br>
+              </p>
+            </div>
+          </div>
+          <div class="u-align-center u-container-style u-list-item u-palette-4-base u-repeater-item u-list-item-2">
+            <div class="u-container-layout u-similar-container u-container-layout-2">
+              <h3 class="u-align-center u-custom-font u-font-montserrat u-text u-text-black u-text-4">Bước 2</h3>
+              <h4 class="u-align-center u-custom-font u-font-montserrat u-text u-text-5">Làm bài&nbsp;đánh giá</h4>
+              <p class="u-align-center u-text u-text-6"> Làm bài đánh giá định hướng nghề nghiệp để xác định nghề nghiệp/hướng phát​​ triển thích hợp với bạn<br>
+                <br>
+              </p>
+            </div>
+          </div>
+          <div class="u-align-center u-container-style u-custom-item u-list-item u-palette-2-base u-repeater-item u-list-item-3">
+            <div class="u-container-layout u-similar-container u-container-layout-3">
+              <h3 class="u-align-center u-custom-font u-font-montserrat u-text u-text-black u-text-7">Bước 3</h3>
+              <h4 class="u-align-center u-custom-font u-font-montserrat u-text u-text-8">Xem kết quả</h4>
+              <p class="u-align-center u-text u-text-9">Hiển thị chuyên ngành phù hợp với bạn<br>
+                <br>
+                <br>
+                <br>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h1 class="u-custom-font u-font-montserrat u-text u-text-palette-2-light-1 u-title u-text-10">Gợi&nbsp;ý chuyên ngành phù hợp với bạn chỉ sau 3 bước! </h1>
+      <a href="Tải-lên-bảng-điểm.html#sec-e3ae" data-page-id="1663009593" class="u-btn u-button-style u-hover-feature u-palette-2-base u-btn-1">Thực hiện ngay</a>
+    </section>
+
 </template>
 
 <script>
