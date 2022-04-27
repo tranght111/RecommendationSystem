@@ -128,7 +128,6 @@ export default {
 
 @import './assets/css/nicepage.css';
 @import './assets/css/homepage.css';
-/* @import './assets/js/jquery.js'; */
-/* @import './assets/js/nicepage.js'; */
+@import './assets/css/upload.css';
 
 </style>

@@ -3,7 +3,7 @@
       <div class="u-clearfix u-sheet u-sheet-1">
         <h1 class="u-align-left u-text u-text-palette-2-light-2 u-title u-text-1">Bạn là sinh viên năm 2 CNTT nhưng chưa có&nbsp;định hướng&nbsp;để chọn chuyên ngành? </h1>
         <h4 class="u-align-left-md u-align-left-sm u-align-left-xs u-align-right-lg u-align-right-xl u-text u-text-palette-2-light-2 u-text-2">Chưa biết về thông tin, nội dung giảng dạy hay hướng phát triển của các chuyên ngành?</h4>
-        <a href="Trang-chủ.html#carousel_bc78" data-page-id="1791089" class="u-btn u-button-style u-palette-2-base u-btn-1">tìm hiểu ngay</a>
+        <a href="Trang-chủ.html#carousel_bc78" data-page-id="1791089" class="u-btn u-button-style u-palette-2-base u-btn-01">tìm hiểu ngay</a>
       </div>
     </section>
     <section class="u-align-center u-clearfix u-palette-5-light-2 u-section-2" id="carousel_bc78">
@@ -14,8 +14,8 @@
           <div class="u-container-style u-list-item u-palette-1-base u-repeater-item u-list-item-1">
             <div class="u-container-layout u-similar-container u-container-layout-1">
               <h3 class="u-align-center u-custom-font u-font-montserrat u-text u-text-black u-text-1">Bước 1</h3>
-              <h4 class="u-align-center u-custom-font u-font-montserrat u-text u-text-2">Tải lên bảng&nbsp;điểm</h4>
-              <p class="u-align-center u-text u-text-3"> Tải lên bảng điểm của bạn lấy từ Portal<br>
+              <h4 class="u-align-center u-custom-font u-font-montserrat u-text u-text-2">Cung cấp thông tin bảng&nbsp;điểm</h4>
+              <p class="u-align-center u-text u-text-3"> Tải lên file bảng điểm lấy từ Portal hoặc nhập điểm của bạn<br>
                 <br>
                 <br>
                 <br>
@@ -25,7 +25,7 @@
           <div class="u-align-center u-container-style u-list-item u-palette-4-base u-repeater-item u-list-item-2">
             <div class="u-container-layout u-similar-container u-container-layout-2">
               <h3 class="u-align-center u-custom-font u-font-montserrat u-text u-text-black u-text-4">Bước 2</h3>
-              <h4 class="u-align-center u-custom-font u-font-montserrat u-text u-text-5">Làm bài&nbsp;đánh giá</h4>
+              <h4 class="u-align-center u-custom-font u-font-montserrat u-text u-text-5">Làm bài&nbsp;đánh giá</h4> <br>
               <p class="u-align-center u-text u-text-6"> Làm bài đánh giá định hướng nghề nghiệp để xác định nghề nghiệp/hướng phát​​ triển thích hợp với bạn<br>
                 <br>
               </p>
@@ -34,7 +34,7 @@
           <div class="u-align-center u-container-style u-custom-item u-list-item u-palette-2-base u-repeater-item u-list-item-3">
             <div class="u-container-layout u-similar-container u-container-layout-3">
               <h3 class="u-align-center u-custom-font u-font-montserrat u-text u-text-black u-text-7">Bước 3</h3>
-              <h4 class="u-align-center u-custom-font u-font-montserrat u-text u-text-8">Xem kết quả</h4>
+              <h4 class="u-align-center u-custom-font u-font-montserrat u-text u-text-8">Xem kết quả</h4> <br>
               <p class="u-align-center u-text u-text-9">Hiển thị chuyên ngành phù hợp với bạn<br>
                 <br>
                 <br>
@@ -45,7 +45,7 @@
         </div>
       </div>
       <h1 class="u-custom-font u-font-montserrat u-text u-text-palette-2-light-1 u-title u-text-10">Gợi&nbsp;ý chuyên ngành phù hợp với bạn chỉ sau 3 bước! </h1>
-      <a href="Tải-lên-bảng-điểm.html#sec-e3ae" data-page-id="1663009593" class="u-btn u-button-style u-hover-feature u-palette-2-base u-btn-1">Thực hiện ngay</a>
+      <a data-page-id="1663009593" class="u-btn u-button-style u-hover-feature u-palette-2-base u-btn-1"> <router-link to="/Upload" tag="span"> Thực hiện ngay </router-link></a>
     </section>
 
 </template>
@@ -58,5 +58,5 @@ export default {
 </script>
 
 <style>
-
+  /* @import './css/homepage.css'; */
 </style>
