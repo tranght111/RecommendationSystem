@@ -1,9 +1,9 @@
 <template>
-   <section class="u-align-center u-clearfix u-image u-shading u-section-1" src="" id="sec-6139" data-image-width="150" data-image-height="91">
+   <section class="u-align-center u-clearfix u-image u-shading u-home-section-1" src="" id="sec-6139" data-image-width="150" data-image-height="91">
       <div class="u-clearfix u-sheet u-sheet-1">
-        <h1 class="u-align-left u-text u-text-palette-2-light-2 u-title u-text-1">Bạn là sinh viên năm 2 CNTT nhưng chưa có&nbsp;định hướng&nbsp;để chọn chuyên ngành? </h1>
-        <h4 class="u-align-left-md u-align-left-sm u-align-left-xs u-align-right-lg u-align-right-xl u-text u-text-palette-2-light-2 u-text-2">Chưa biết về thông tin, nội dung giảng dạy hay hướng phát triển của các chuyên ngành?</h4>
-        <a href="Trang-chủ.html#carousel_bc78" data-page-id="1791089" class="u-btn u-button-style u-palette-2-base u-btn-01">tìm hiểu ngay</a>
+        <h1 class="u-align-left u-text u-text-palette-2-light-2 u-title u-home-text-1">Bạn là sinh viên năm 2 CNTT nhưng chưa có&nbsp;định hướng&nbsp;để chọn chuyên ngành? </h1>
+        <h4 class="u-align-left-md u-align-left-sm u-align-left-xs u-align-right-lg u-align-right-xl u-text u-text-palette-2-light-2 u-home-text-2">Chưa biết về thông tin, nội dung giảng dạy hay hướng phát triển của các chuyên ngành?</h4>
+        <a href="/#carousel_bc78" data-page-id="1791089" class="u-btn u-button-style u-palette-2-base u-home-btn-01">tìm hiểu ngay</a>
       </div>
     </section>
     <section class="u-align-center u-clearfix u-palette-5-light-2 u-section-2" id="carousel_bc78">
