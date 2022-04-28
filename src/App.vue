@@ -24,19 +24,21 @@
                   style="padding: 8px 36px;"> TRANG CHỦ  </router-link>
                   </a>
                   <!-- href="Trang-chủ.html" style="padding: 8px 36px;">Trang chủ</a> -->
-</li><li class="u-nav-item"><a>
-                     <router-link to="/Majors" tag="span" class="u-border-3 u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" 
-                  style="padding: 8px 36px;"> CHUYÊN NGÀNH  <i class="fa fa-caret-down" aria-hidden="true"></i></router-link> 
-                  </a>
-<!-- href="Chuyên-ngành.html" style="padding: 8px 36px;">Chuyên ngành</a> -->
+</li><li class="u-nav-item">
+  <a class="u-border-3 u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" style="padding: 8px 36px;">Trang chủ</a>
+
+                     <!-- <router-link to="/Majors" tag="span" class="u-border-3 u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90"  -->
+                  <!-- style="padding: 8px 36px;"> CHUYÊN NGÀNH  <i class="fa fa-caret-down" aria-hidden="true"></i></router-link>  -->
+                  <!-- </a> -->
+
 <div class="u-nav-popup">
    <ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-12 u-nav-2">
-   <li class="u-nav-item"><a class="u-active-palette-1-light-2 u-button-style u-hover-palette-1-dark-1 u-nav-link u-palette-1-dark-2">Công nghệ Tri thức</a>
-</li><li class="u-nav-item"><a class="u-active-palette-1-light-2 u-button-style u-hover-palette-1-dark-1 u-nav-link u-palette-1-dark-2">Hệ thống Thông tin</a>
-</li><li class="u-nav-item"><a class="u-active-palette-1-light-2 u-button-style u-hover-palette-1-dark-1 u-nav-link u-palette-1-dark-2">Khoa học Máy tính</a>
-</li><li class="u-nav-item"><a class="u-active-palette-1-light-2 u-button-style u-hover-palette-1-dark-1 u-nav-link u-palette-1-dark-2">Kỹ thuật Phần mềm</a>
-</li><li class="u-nav-item"><a class="u-active-palette-1-light-2 u-button-style u-hover-palette-1-dark-1 u-nav-link u-palette-1-dark-2">Mạng máy tính &amp; Viễn thông</a>
-</li><li class="u-nav-item"><a class="u-active-palette-1-light-2 u-button-style u-hover-palette-1-dark-1 u-nav-link u-palette-1-dark-2">Thị giác Máy tính</a>
+   <li class="u-nav-item"><a class="u-active-palette-1-light-2 u-button-style u-hover-palette-1-dark-1 u-nav-link u-palette-1-dark-2"  href="https://www.fit.hcmus.edu.vn/vn/LinkClick.aspx?fileticket=83D3SQKHWTg%3d&amp;tabid=1133&amp;mid=3838" target="_blank">Công nghệ Tri thức</a>
+</li><li class="u-nav-item"><a class="u-active-palette-1-light-2 u-button-style u-hover-palette-1-dark-1 u-nav-link u-palette-1-dark-2" href="https://www.fit.hcmus.edu.vn/vn/LinkClick.aspx?fileticket=pqUpLNAPlak%3d&amp;tabid=1133&amp;mid=3838" target="_blank">Hệ thống Thông tin</a>
+</li><li class="u-nav-item"><a class="u-active-palette-1-light-2 u-button-style u-hover-palette-1-dark-1 u-nav-link u-palette-1-dark-2" href="https://www.fit.hcmus.edu.vn/vn/LinkClick.aspx?fileticket=83D3SQKHWTg%3d&amp;tabid=1133&amp;mid=3838" target="_blank">Khoa học Máy tính</a>
+</li><li class="u-nav-item"><a class="u-active-palette-1-light-2 u-button-style u-hover-palette-1-dark-1 u-nav-link u-palette-1-dark-2" href="https://www.fit.hcmus.edu.vn/vn/LinkClick.aspx?fileticket=7%2fqa26dddOg%3d&amp;tabid=1133&amp;mid=3838" target="_blank">Kỹ thuật Phần mềm</a>
+</li><li class="u-nav-item"><a class="u-active-palette-1-light-2 u-button-style u-hover-palette-1-dark-1 u-nav-link u-palette-1-dark-2" href="https://www.fit.hcmus.edu.vn/vn/LinkClick.aspx?fileticket=kcEqLQ2P%2fYA%3d&amp;tabid=1133&amp;mid=3838" target="_blank">Mạng máy tính &amp; Viễn thông</a>
+</li><li class="u-nav-item"><a class="u-active-palette-1-light-2 u-button-style u-hover-palette-1-dark-1 u-nav-link u-palette-1-dark-2" href="https://www.fit.hcmus.edu.vn/vn/LinkClick.aspx?fileticket=83D3SQKHWTg%3d&amp;tabid=1133&amp;mid=3838" target="_blank">Thị giác Máy tính</a>
 </li></ul>
 </div>
 </li><li class="u-nav-item"><a>
@@ -52,10 +54,11 @@
                 <div class="u-menu-close"></div>
                 <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-3"><li class="u-nav-item"><a class="u-button-style u-nav-link" ><router-link to="/" tag="span" class="u-border-3 u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" 
                   style="padding: 8px 36px;"> TRANG CHỦ  </router-link></a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" > <router-link to="/Majors" tag="span" > CHUYÊN NGÀNH </router-link> </a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" > CHUYÊN NGÀNH </a>
+<!-- </li><li class="u-nav-item"><a class="u-button-style u-nav-link" > <router-link to="/Majors" tag="span" > CHUYÊN NGÀNH </router-link> </a> -->
    <div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-12 u-nav-4">
       <li class="u-nav-item"><a class="u-button-style u-nav-link">Công nghệ Tri thức</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link">Hệ thống Thông tin</a>
+</li><li class="u-nav-item"><a  class="u-button-style u-nav-link">Hệ thống Thông tin</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link">Khoa học Máy tính</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link">Kỹ thuật Phần mềm</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link">Mạng máy tính &amp; Viễn thông</a>
@@ -120,7 +123,7 @@ export default {
 
 <style>
 @import './assets/style.css';
-@import './assets/css/bootstrap.min.css';
+/* @import './assets/css/bootstrap.min.css'; */
 @import './assets/css/responsive.css';
 @import './assets/css/jquery.mCustomScrollbar.min.css';
 @import './assets/css/jquery-ui.css';
@@ -129,5 +132,7 @@ export default {
 @import './assets/css/nicepage.css';
 @import './assets/css/homepage.css';
 @import './assets/css/upload.css';
+@import './assets/css/result.css';
+@import './assets/css/test.css';
 
 </style>

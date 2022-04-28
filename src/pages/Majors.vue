@@ -6,7 +6,7 @@
     <div id="middle" class="middle">
         <div class="container">
             <ol class="majors">
-                <li><a href="/#/"> Chuyên ngành Kỹ thuật phần mềm </a></li>
+                <li><a href="https://www.fit.hcmus.edu.vn/vn/Default.aspx?tabid=1133" target="_blank"> Chuyên ngành Kỹ thuật phần mềm </a></li>
                 <li><a href="/#/">Chuyên ngành Công nghệ tri thức</a></li>
                 <li><a href="/#/">Chuyên ngành Mạng máy tính và viễn thông</a></li>
                 <li><a href="/#/">Chuyên ngành Hệ thống thông tin</a></li>

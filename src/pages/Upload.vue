@@ -1,14 +1,14 @@
 <template>
-    <section class="u-clearfix u-section-1" id="sec-e3ae">
+    <section class="u-clearfix u-upload-section-1" id="sec-e3ae">
       <div class="u-clearfix u-sheet u-sheet-2">
         <div class="u-container-style u-group u-white u-group-1">
           <div class="u-container-layout u-container-layout-1">
             <h1 class="u-custom-font u-font-merriweather u-text u-text-default u-title u-text-11">Thông tin bảng&nbsp;điểm </h1>
             <p class="u-text u-text-palette-1-dark-1 u-text-22"> Lưu ý: Sinh viên chỉ chọn 1 trong 2 lựa chọn bên dưới&nbsp;để cung cấp thông tin bảng điểm của mình.&nbsp;</p>
             <p class="u-text u-text-default u-text-3">Lựa chọn 1: Tải lên bảng&nbsp;điểm&nbsp;<span style="font-weight: 400;">
-                <span style="font-weight: 400;">(ch</span>
+                <span style="font-weight: 400; font-style: italic; color: #4c7397;">(ch</span>
               </span>
-              <span style="font-weight: 400;">ỉ chấp nhận tệp tin&nbsp;Excel)</span>
+              <span style="font-weight: 400; font-style: italic; color: #4c7397;">ỉ chấp nhận tệp tin&nbsp;Excel)</span>
             </p>
             <div class="u-accordion u-collapsed-by-default u-accordion-1">
               <div class="u-accordion-item">
