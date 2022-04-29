@@ -120,7 +120,7 @@
                           <input type="hidden" value="" name="recaptchaResponse">
                         </form>
                       </div>
-                        <a href="#" class="u-btn u-btn-submit u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-4" style="margin-top: 130px">Lưu</a>
+                        <a href="/Test" class="u-btn u-btn-submit u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-4" style="margin-top: 130px">Lưu</a>
                           <input type="submit" value="submit" class="u-form-control-hidden">
                     </div>
                   </div>
