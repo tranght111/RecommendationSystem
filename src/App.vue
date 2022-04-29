@@ -25,7 +25,7 @@
                   </a>
                   <!-- href="Trang-chủ.html" style="padding: 8px 36px;">Trang chủ</a> -->
 </li><li class="u-nav-item">
-  <a class="u-border-3 u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" style="padding: 8px 36px;">Trang chủ</a>
+  <a class="u-border-3 u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" style="padding: 8px 36px;">Chuyên ngành <i class="fa fa-caret-down" aria-hidden="true"></i></a>
 
                      <!-- <router-link to="/Majors" tag="span" class="u-border-3 u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90"  -->
                   <!-- style="padding: 8px 36px;"> CHUYÊN NGÀNH  <i class="fa fa-caret-down" aria-hidden="true"></i></router-link>  -->
@@ -134,5 +134,5 @@ export default {
 @import './assets/css/upload.css';
 @import './assets/css/result.css';
 @import './assets/css/test.css';
-
+@import './assets/css/about.css';
 </style>
