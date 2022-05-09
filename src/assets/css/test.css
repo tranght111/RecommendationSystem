@@ -9,7 +9,7 @@
 .u-test-section-1 .u-group-1 {
   min-height: 188px;
   margin-bottom: 0;
-  margin-top: 0;
+  margin-top: 15px;
   height: auto;
 }
 
@@ -21,7 +21,7 @@
 .u-test-section-1 .u-text-1 {
   font-weight: 700;
   font-size: 1.625rem;
-  margin: 5px 891px 0 0;
+  margin: 5px 891px 5px 0;
 }
 
 .u-test-section-1 .u-list-1 {
@@ -589,7 +589,17 @@
   font-weight: 700;
   font-size: 1.125rem;
   background-image: none;
-  margin: -48px auto 21px 0;
+  margin: -49px auto 21px 0;
+  padding: 9px 19px 10px 18px;
+}
+
+.u-test-section-1 .u-btn-33 {
+  border-style: solid;
+  letter-spacing: 1px;
+  font-weight: 700;
+  font-size: 1.125rem;
+  background-image: none;
+  margin: -71px 200px 21px auto;
   padding: 9px 19px 10px 18px;
 }
 
