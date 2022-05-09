@@ -6,6 +6,11 @@
      <!-- Header -->
      <header class="u-clearfix u-header u-palette-1-light-2 u-sticky u-sticky-e93e u-header" id="sec-b84c">
         <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+          <a data-page-id="1791089" class="u-image u-logo u-image-1" data-image-width="250" data-image-height="70" title="Trang chủ">
+            <router-link to="/" tag="span" >
+              <img src="./assets/images/logoRS1.png" class="u-logo-image u-logo-image-1">
+            </router-link>
+          </a>
         <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
           <div class="menu-collapse u-custom-font u-font-merriweather" style="font-size: 1rem; letter-spacing: 0px; text-transform: uppercase; font-weight: 700;">
             <a class="u-button-style u-custom-active-border-color u-custom-active-color u-custom-border u-custom-border-color u-custom-borders u-custom-color u-custom-hover-border-color u-custom-hover-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#" style="padding: 3px 4px; font-size: calc(1em + 6px);">
@@ -33,10 +38,10 @@
 
 <div class="u-nav-popup">
    <ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-12 u-nav-2">
-   <li class="u-nav-item"><a class="u-active-palette-1-light-2 u-button-style u-hover-palette-1-dark-1 u-nav-link u-palette-1-dark-2"  href="https://www.fit.hcmus.edu.vn/vn/LinkClick.aspx?fileticket=83D3SQKHWTg%3d&amp;tabid=1133&amp;mid=3838" target="_blank">Công nghệ Tri thức</a>
+   <li class="u-nav-item"><a class="u-active-palette-1-light-2 u-button-style u-hover-palette-1-dark-1 u-nav-link u-palette-1-dark-2"  href="/CongNgheTriThuc">Công nghệ Tri thức</a>
 </li><li class="u-nav-item"><a class="u-active-palette-1-light-2 u-button-style u-hover-palette-1-dark-1 u-nav-link u-palette-1-dark-2" href="https://www.fit.hcmus.edu.vn/vn/LinkClick.aspx?fileticket=pqUpLNAPlak%3d&amp;tabid=1133&amp;mid=3838" target="_blank">Hệ thống Thông tin</a>
 </li><li class="u-nav-item"><a class="u-active-palette-1-light-2 u-button-style u-hover-palette-1-dark-1 u-nav-link u-palette-1-dark-2" href="https://www.fit.hcmus.edu.vn/vn/LinkClick.aspx?fileticket=83D3SQKHWTg%3d&amp;tabid=1133&amp;mid=3838" target="_blank">Khoa học Máy tính</a>
-</li><li class="u-nav-item"><a class="u-active-palette-1-light-2 u-button-style u-hover-palette-1-dark-1 u-nav-link u-palette-1-dark-2" href="https://www.fit.hcmus.edu.vn/vn/LinkClick.aspx?fileticket=7%2fqa26dddOg%3d&amp;tabid=1133&amp;mid=3838" target="_blank">Kỹ thuật Phần mềm</a>
+</li><li class="u-nav-item"><a class="u-active-palette-1-light-2 u-button-style u-hover-palette-1-dark-1 u-nav-link u-palette-1-dark-2" href="/" target="_blank">Kỹ thuật Phần mềm</a>
 </li><li class="u-nav-item"><a class="u-active-palette-1-light-2 u-button-style u-hover-palette-1-dark-1 u-nav-link u-palette-1-dark-2" href="https://www.fit.hcmus.edu.vn/vn/LinkClick.aspx?fileticket=kcEqLQ2P%2fYA%3d&amp;tabid=1133&amp;mid=3838" target="_blank">Mạng máy tính &amp; Viễn thông</a>
 </li><li class="u-nav-item"><a class="u-active-palette-1-light-2 u-button-style u-hover-palette-1-dark-1 u-nav-link u-palette-1-dark-2" href="https://www.fit.hcmus.edu.vn/vn/LinkClick.aspx?fileticket=83D3SQKHWTg%3d&amp;tabid=1133&amp;mid=3838" target="_blank">Thị giác Máy tính</a>
 </li></ul>
@@ -73,7 +78,7 @@
             <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
           </div>
         </nav>
-        <a data-page-id="1791089" class="u-border-no-bottom u-border-no-left u-border-no-top u-border-none u-border-palette-2-base u-btn u-btn-round u-button-style u-custom-font u-font-merriweather u-none u-radius-6 u-text-palette-1-dark-1 u-btn-1"> <router-link to="/" tag="span" > Gợi&nbsp;ý chuyên ngành  </router-link>  </a>
+        <!-- <a data-page-id="1791089" class="u-border-no-bottom u-border-no-left u-border-no-top u-border-none u-border-palette-2-base u-btn u-btn-round u-button-style u-custom-font u-font-merriweather u-none u-radius-6 u-text-palette-1-dark-1 u-btn-1"> <router-link to="/" tag="span" > Gợi&nbsp;ý chuyên ngành  </router-link>  </a> -->
       </div>
 </header>
 <!-- End Header -->
@@ -86,8 +91,11 @@
             <div class="u-layout-row">
               <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-1">
                 <div class="u-container-layout u-valign-top u-container-layout-1">
-                  <a class="u-border-no-bottom u-border-no-left u-border-no-top u-border-none u-border-palette-2-base u-btn u-btn-round u-button-style u-custom-font u-font-merriweather u-none u-radius-6 u-text-palette-1-dark-1 u-btn-1"> Gợi&nbsp;ý chuyên ngành </a>
-                  <p class="u-align-left u-custom-font u-font-merriweather u-text u-text-1">Website gợi ý chuyên ngành cho sinh viên khoa Công nghệ Thông tin trường Đại học Khoa học Tự nhiên</p>
+                  <router-link to="/" tag="span" >
+                    <img src="./assets/images/footerlogo.png" class="u-logo-image u-logo-image-1">
+                  </router-link>
+                  <!-- <a class="u-border-no-bottom u-border-no-left u-border-no-top u-border-none u-border-palette-2-base u-btn u-btn-round u-button-style u-custom-font u-font-merriweather u-none u-radius-6 u-text-palette-1-dark-1 u-btn-1"> Gợi&nbsp;ý chuyên ngành </a> -->
+                  <p class="u-align-left u-custom-font u-font-merriweather u-text u-text-1">Website gợi ý chuyên ngành cho sinh viên khoa Công nghệ Thông tin trường Đại học Khoa học Tự nhiên.</p>
                 </div>
               </div>
               <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-2">
@@ -123,11 +131,11 @@ export default {
 
 <style>
 @import './assets/style.css';
-/* @import './assets/css/bootstrap.min.css'; */
+@import './assets/css/bootstrap.min.css';
 @import './assets/css/responsive.css';
-@import './assets/css/jquery.mCustomScrollbar.min.css';
 @import './assets/css/jquery-ui.css';
 @import './assets/css/font-awesome.min.css';
+@import './assets/css/metismenu.min.css';
 
 @import './assets/css/nicepage.css';
 @import './assets/css/homepage.css';
@@ -135,4 +143,5 @@ export default {
 @import './assets/css/result.css';
 @import './assets/css/test.css';
 @import './assets/css/about.css';
+@import './assets/css/major.css';
 </style>

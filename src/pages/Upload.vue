@@ -4,32 +4,61 @@
         <div class="u-container-style u-group u-white u-group-1">
           <div class="u-container-layout u-container-layout-1">
             <h1 class="u-custom-font u-font-merriweather u-text u-text-default u-title u-text-11">Thông tin bảng&nbsp;điểm </h1>
-            <p class="u-text u-text-palette-1-dark-1 u-text-22"> Lưu ý: Sinh viên chỉ chọn 1 trong 2 lựa chọn bên dưới&nbsp;để cung cấp thông tin bảng điểm của mình.&nbsp;</p>
-            <p class="u-text u-text-default u-text-3">Lựa chọn 1: Tải lên bảng&nbsp;điểm&nbsp;<span style="font-weight: 400;">
-                <span style="font-weight: 400; font-style: italic; color: #4c7397;">(ch</span>
-              </span>
-              <span style="font-weight: 400; font-style: italic; color: #4c7397;">ỉ chấp nhận tệp tin&nbsp;Excel)</span>
-            </p>
+            <div class="u-form u-form-1">
+                        <div class="u-form-group u-form-group-15">
+                          <label for="text-871d" class="u-label u-label-1">Mã số sinh viên</label>
+                          <input type="text" placeholder="Nhập vào MSSV" id="text-871d" name="mssv" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"  >
+                        </div>
+                      </div>
+            <p class="u-text u-text-22"> Lưu ý: Sinh viên chỉ chọn 1 trong 2 lựa chọn bên dưới&nbsp;để cung cấp thông tin bảng điểm của mình.&nbsp;</p>
+            
+            <div class="u-text u-text-default u-text-palette-1-dark-1 u-text-3">
+            <input type="radio" id="p1" value="Plan1" v-model="PlanPicked" />
+            <span v-if="PlanPicked === 'Plan2'">
+              <label :style="StylePlanNonDisplay" for="p1">&nbsp; Lựa chọn 1: Tải lên bảng điểm&nbsp;</label>
+              <!-- <span :style="StylePlanNonDisplay" style="font-weight: 400; font-style: italic;">(chỉ chấp nhận tệp tin Excel)</span> -->
+            </span>
+            <span v-else>
+              <label for="p1">&nbsp; Lựa chọn 1: Tải lên bảng&nbsp;điểm&nbsp; </label>
+              <span style="font-weight: 400; font-style: italic; color: red; font-size: 1.125rem">(chỉ chấp nhận tệp tin Excel)</span>
+            </span>
+            </div>
+            <!-- PLAN 1 -->
+            <div v-if="PlanPicked === 'Plan1'">
             <div class="u-accordion u-collapsed-by-default u-accordion-1">
               <div class="u-accordion-item">
-                <a class="u-accordion-link u-button-style u-text-active-palette-1-light-1 u-text-palette-1-dark-1 u-accordion-link-1" id="link-3b8b" aria-controls="3b8b" aria-selected="false">
+                <a class="u-accordion-link u-button-style u-text-hover-palette-1-dark-1 u-text-active-palette-1-dark-1 u-text-palette-1-light-1 u-accordion-link-1" id="link-3b8b" aria-controls="3b8b" aria-selected="false">
                   <span class="u-accordion-link-text">Hướng dẫn&nbsp;</span><span class="u-accordion-link-icon u-accordion-link-icon-hidden u-icon u-text-grey-40 u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 16 16" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-036a"></use></svg><svg class="u-svg-content" viewBox="0 0 16 16" x="0px" y="0px" id="svg-036a"><path d="M8,10.7L1.6,5.3c-0.4-0.4-1-0.4-1.3,0c-0.4,0.4-0.4,0.9,0,1.3l7.2,6.1c0.1,0.1,0.4,0.2,0.6,0.2s0.4-0.1,0.6-0.2l7.1-6
 	c0.4-0.4,0.4-0.9,0-1.3c-0.4-0.4-1-0.4-1.3,0L8,10.7z"></path></svg></span>
                 </a>
                 <div class="u-accordion-pane u-container-style u-shape-rectangle u-accordion-pane-1" id="3b8b" aria-labelledby="link-3b8b">
                   <div class="u-container-layout u-container-layout-2">
                     <p class="u-text u-text-4">Truy cập vào trang Portal​&nbsp;của trường, chọn <i>Qu</i>
-                      <span style="font-style: italic;">ản lý học tập</span>&nbsp;=&gt; chọn <span style="font-style: italic;">Tra cứu kết quả học tập</span>. Trong&nbsp;ô <span style="font-style: italic;">Năm học</span>, chọn "--Tất cả--" =&gt; chọn <span style="font-style: italic;">Xem kết quả học tập</span>. Sau&nbsp;đó dùng chuột bôi&nbsp;đen bảng <span style="font-style: italic;">Danh Sách Kết Quả Học Tập</span> (từ chữ "Danh Sách Kết Quả Học Tập"&nbsp;đến "(*): Vui lòng đánh giá môn học để được xem điểm." =&gt; nhấn <span style="font-style: italic;">Ctrl+C</span>&nbsp;để copy rồi mở một trang&nbsp;Excel mới và nhấn <span style="font-style: italic;">Ctrl+V</span>&nbsp;để paste. Lưu file và tải file lên.
+                      <span style="font-style: italic;">ản lý học tập</span>&nbsp;=&gt; chọn <span style="font-style: italic;">Tra cứu kết quả học tập</span>=> chọn "--Tất cả--" trong ô
+                      <span style="font-style: italic;">Năm học</span>. Copy bảng
+                      <span style="font-style: italic;">Danh Sách Kết Quả Học Tập</span> vào Excel. Lưu file và tải file lên.
                     </p>
                   </div>
                 </div>
               </div>
             </div>
-            <a href="https://nicepage.com/k/adult-html-templates" class="u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-1"><i class="fa fa-upload" aria-hidden="true"></i>&nbsp;Tải tệp tin
+            <a href="/" class="u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-1"><i class="fa fa-upload" aria-hidden="true"></i>&nbsp;Tải tệp tin
             </a>
-            <p class="u-text u-text-palette-1-dark-1 u-text-22" style="font-size: 16px; padding-left: 20px"><i class="fa fa-arrow-down" aria-hidden="true"></i> Nhập MSSV bên dưới và nhấn Lưu </p>
+            <!-- </div> -->
+            </div>
+            <!-- END PLAN 1 -->
+            <!-- <p class="u-text u-text-palette-1-dark-1 u-text-22" style="font-size: 16px; padding-left: 20px"><i class="fa fa-arrow-down" aria-hidden="true"></i> Nhập MSSV bên dưới và nhấn Lưu </p> -->
             <div class="u-border-1 u-border-grey-dark-1 u-line u-line-horizontal u-line-1"></div>
-            <p class="u-text u-text-default u-text-5">Lựa chọn 2: Nhập các thông tin&nbsp;điểm bên dưới</p>
+            <!-- <p class="u-text u-text-default u-text-5">Lựa chọn 2: Nhập các thông tin&nbsp;điểm bên dưới</p> -->
+            <div class="u-text u-text-default u-text-palette-1-dark-1 u-text-5">
+            <input type="radio" id="p2" value="Plan2" v-model="PlanPicked" />
+            <span v-if="PlanPicked === 'Plan1'">
+              <label :style="StylePlanNonDisplay" for="p2">&nbsp; Lựa chọn 2: Nhập các thông tin điểm bên dưới </label></span>
+            <span v-else>
+              <label for="p2">&nbsp; Lựa chọn 2: Nhập các thông tin điểm bên dưới </label> </span>
+            </div>
+            <!-- PLAN 2 -->
+            <div v-if="PlanPicked === 'Plan2'"> 
             <div class="u-clearfix u-layout-wrap u-layout-wrap-1">
               <div class="u-layout">
                 <div class="u-layout-row">
@@ -74,13 +103,7 @@
                           <input type="hidden" value="" name="recaptchaResponse">
                         </form>
                       </div>
-                        <div class="u-form u-form-1">
-                        <div class="u-form-group u-form-group-15">
-                          <label for="text-871d" class="u-label u-label-1">Mã số sinh viên</label>
-                          <input type="text" placeholder="Nhập MSSV" id="text-871d" name="mssv" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"  >
-                        </div>
                         
-                      </div>
                     </div>
                   </div>
                   <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-2">
@@ -111,8 +134,8 @@
                             <label for="text-871d" class="u-label u-label-1">Vi tích phân 2B</label>
                             <input type="text" placeholder="Nhập điểm" id="text-871d" name="vitichphan2b" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"  >
                           </div>
-                          <!-- <div class="u-align-left u-form-group u-form-submit">
-                            <a href="#" class="u-btn u-btn-submit u-button-style">Submit</a>
+                          <!-- <div class="u-align-right u-form-group u-form-submit">
+                            <a href="#" class="u-btn u-btn-submit u-button-style">Lưu</a>
                             <input type="submit" value="submit" class="u-form-control-hidden">
                           </div> -->
                           <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
@@ -120,26 +143,67 @@
                           <input type="hidden" value="" name="recaptchaResponse">
                         </form>
                       </div>
-                        <a href="/Test" class="u-btn u-btn-submit u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-4" style="margin-top: 130px">Lưu</a>
-                          <input type="submit" value="submit" class="u-form-control-hidden">
+                        
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+            <!-- </div> -->
+            </div>
+            <!-- END PLAN 2 -->
+            <div class="u-align-center">
+              <a href="/Test" class="u-btn u-btn-submit u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-4"> Lưu </a>
+              <!-- <button type="button" class="u-btn u-btn-submit u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-4" data-toggle="modal" data-target="#saveModal"> Lưu
+              </button> -->
+              <!-- <input type="submit" value="submit" class="u-form-control-hidden"> -->
+            </div>
+            <div id="saveModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title mt-0" id="myModalLabel">Lưu bảng điểm</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                    </button>
+                  </div>
+                <div class="modal-body">
+                  <h5 class="font-16">Đã lưu thông tin bảng điểm!</h5>
+                  <p></p>
+                  </div>
+                <div class="modal-footer">
+                  <!-- <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Hủy</button> -->
+                  <button type="button" class="btn btn-primary waves-effect waves-light">Làm bài đánh giá</button>
+                </div>
+              </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+            </div>
           </div>
         </div>
       </div>
     </section>
+
+   <!-- modal -->                        
+  
+
 </template>
 
 <script>
 /* eslint-disable */
 export default {
     name: 'Upload',
+    data() {
+      return {
+        StylePlanNonDisplay: {
+          color: '#adcce9',
+
+        },
+        PlanPicked: 'Plan1',
+      }
+    }
 }
 </script>
 
 <style>
-  /* @import './css/upload.css'; */
+  
 </style>
