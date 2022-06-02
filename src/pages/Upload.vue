@@ -7,7 +7,7 @@
             <div class="u-form u-form-1">
                         <div class="u-form-group u-form-group-15">
                           <label for="text-871d" class="u-label u-label-1">Mã số sinh viên</label>
-                          <input type="text" placeholder="Nhập vào MSSV" id="text-871d" name="mssv" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"  >
+                          <input type="text" placeholder="Nhập vào MSSV" id="text-871d" name="mssv" v-model="mssv" @change="setMSSV(mssv)" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"  >
                         </div>
                       </div>
             <p class="u-text u-text-22"> Lưu ý: Sinh viên chỉ chọn 1 trong 2 lựa chọn bên dưới&nbsp;để cung cấp thông tin bảng điểm của mình.&nbsp;</p>
@@ -42,8 +42,11 @@
                 </div>
               </div>
             </div>
-            <a href="/" class="u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-1"><i class="fa fa-upload" aria-hidden="true"></i>&nbsp;Tải tệp tin
-            </a>
+            <form>
+              <!-- <label class="u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-1" for="fileExcel" ><i class="fa fa-upload" aria-hidden="true"></i>&nbsp;Tải tệp tin </label> -->
+              <input type="file" v-on:change="uploadFile($event)" style="padding-left: 55px" id="fileExcel">
+              <!-- <a class="u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-1"><i class="fa fa-upload" aria-hidden="true"></i>&nbsp;Tải tệp tin</a> -->
+            </form>
             <!-- </div> -->
             </div>
             <!-- END PLAN 1 -->
@@ -71,33 +74,30 @@
                             <input type="text" placeholder="Nhập điểm" id="name-7f32" name="cosotrituenhantao" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
                           </div>
                           <div class="u-form-group">
-                            <label for="email-7f32" class="u-label u-label-2">Nhập môn lập trình</label>
+                            <label for="email-7f32" class="u-label u-label-1">Nhập môn lập trình</label>
                             <input type="text" placeholder="Nhập điểm" id="email-7f32" name="nhapmonlaptrinh" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"  >
                           </div>
                           <div class="u-form-group">
-                            <label for="message-7f32" class="u-label u-label-3">Kỹ thuật lập trình</label>
+                            <label for="message-7f32" class="u-label u-label-1">Kỹ thuật lập trình</label>
                             <input placeholder="Nhập điểm" rows="1" cols="50" id="message-7f32" name="kythuatlaptrinh" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"   type="text">
                           </div>
-                          <div class="u-form-group u-form-group-4">
-                            <label for="text-9df3" class="u-label u-label-4">Phương pháp lập trình hướng đối tượng</label>
+                          <div class="u-form-group">
+                            <label for="text-9df3" class="u-label u-label-1">Phương pháp lập trình hướng đối tượng</label>
                             <input type="text" id="text-9df3" name="phuongphaplaptrinhhuongdoituong" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"   placeholder="Nhập điểm">
                           </div>
-                          <div class="u-form-group u-form-group-5">
-                            <label for="text-69d1" class="u-label u-label-5">Cấu trúc dữ liệu và giải thuật</label>
+                          <div class="u-form-group">
+                            <label for="text-69d1" class="u-label u-label-1">Cấu trúc dữ liệu và giải thuật</label>
                             <input type="text" placeholder="Nhập điểm" id="text-69d1" name="cautrucdulieuvagiaithuat" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"  >
                           </div>
-                          <div class="u-form-group u-form-group-6">
-                            <label for="text-b499" class="u-label u-label-6">Cơ sở dữ liệu</label>
+                          <div class="u-form-group">
+                            <label for="text-b499" class="u-label u-label-1">Cơ sở dữ liệu</label>
                             <input type="text" placeholder="Nhập điểm" id="text-b499" name="cosodulieu" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"  >
                           </div>
-                          <div class="u-form-group u-form-group-7">
-                            <label for="text-5ea4" class="u-label u-label-7">Hệ điều hành</label>
+                          <div class="u-form-group">
+                            <label for="text-5ea4" class="u-label u-label-1">Hệ điều hành</label>
                             <input type="text" placeholder="Nhập điểm" id="text-5ea4" name="hedieuhanh" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"  >
                           </div>
-                          <!-- <div class="u-align-left u-form-group u-form-submit">
-                            <a href="#" class="u-btn u-btn-submit u-button-style">Submit</a>
-                            <input type="submit" value="submit" class="u-form-control-hidden">
-                          </div> -->
+                         
                           <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
                           <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
                           <input type="hidden" value="" name="recaptchaResponse">
@@ -122,22 +122,19 @@
                             <label for="message-0c26" class="u-label u-label-1">Đại số tuyến tính</label>
                             <input placeholder="Nhập điểm" rows="4" cols="50" id="message-0c26" name="daisotuyentinh" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"   type="text">
                           </div>
-                          <div class="u-form-group u-form-group-12">
+                          <div class="u-form-group">
                             <label for="text-c140" class="u-label u-label-1">Xác suất thống kê</label>
                             <input type="text" placeholder="Nhập điểm" id="text-c140" name="xacsuatthongke" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"  >
                           </div>
-                          <div class="u-form-group u-form-group-13">
+                          <div class="u-form-group">
                             <label for="text-9aed" class="u-label u-label-1">Vi tích phân 1B</label>
                             <input type="text" placeholder="Nhập điểm" id="text-9aed" name="vitichphan1b" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"  >
                           </div>
-                          <div class="u-form-group u-form-group-14">
+                          <div class="u-form-group">
                             <label for="text-871d" class="u-label u-label-1">Vi tích phân 2B</label>
                             <input type="text" placeholder="Nhập điểm" id="text-871d" name="vitichphan2b" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"  >
                           </div>
-                          <!-- <div class="u-align-right u-form-group u-form-submit">
-                            <a href="#" class="u-btn u-btn-submit u-button-style">Lưu</a>
-                            <input type="submit" value="submit" class="u-form-control-hidden">
-                          </div> -->
+                          
                           <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
                           <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
                           <input type="hidden" value="" name="recaptchaResponse">
@@ -153,7 +150,7 @@
             </div>
             <!-- END PLAN 2 -->
             <div class="u-align-center">
-              <a href="/Test" class="u-btn u-btn-submit u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-4"> Lưu </a>
+              <a href="/Test" v-on:click="submitFile()" class="u-btn u-btn-submit u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-4"> Lưu </a>
               <!-- <button type="button" class="u-btn u-btn-submit u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-4" data-toggle="modal" data-target="#saveModal"> Lưu
               </button> -->
               <!-- <input type="submit" value="submit" class="u-form-control-hidden"> -->
@@ -189,7 +186,8 @@
 </template>
 
 <script>
-/* eslint-disable */
+import axios from 'axios'
+
 export default {
     name: 'Upload',
     data() {
@@ -199,11 +197,43 @@ export default {
 
         },
         PlanPicked: 'Plan1',
+        fileDiem: null,
+        mssv: '',
+      }
+    },
+
+    methods: {
+      setMSSV(mssv) {
+        localStorage.SMssv = mssv;
+      },
+
+      uploadFile(event){
+        this.fileDiem = event.target.files[0];
+        let formData = new FormData();
+        formData.append('file', this.fileDiem);
+        if (formData){
+          const reader = new FileReader();
+        }
+        axios.post("https://localhost:44326/api/diems", formData).then((response) => {
+                alert("success " + response.data);
+            });
+      },
+      submitFile(){
+        // let formData = new FormData();
+        // formData.append('file', this.fileDiem);
+        // if (formData){
+        //   const reader = new FileReader();
+        // }
+        // axios.post("https://localhost:44326/api/diems", formData).then((response) => {
+        //         alert("success " + response.data);
+        //     }).catch(error => {
+        //         console.log(error);
+        //     });
       }
     }
 }
+
+
+
 </script>
 
-<style>
-  
-</style>

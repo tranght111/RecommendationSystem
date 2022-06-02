@@ -17,69 +17,36 @@
               <svg class="u-svg-link" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
               <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g>
                  <rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect>
-              <rect y="13" width="16" height="2"></rect>
-</g></svg>
+              <rect y="13" width="16" height="2"></rect></g></svg>
             </a>
           </div>
           <div class="u-custom-menu u-nav-container">
             <ul class="u-custom-font u-font-merriweather u-nav u-spacing-30 u-unstyled u-nav-1">
-               <li class="u-nav-item">
-                  <a>
-                     <router-link to="/" tag="span" class="u-border-3 u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" 
-                  style="padding: 8px 36px;"> TRANG CHỦ  </router-link>
-                  </a>
-                  <!-- href="Trang-chủ.html" style="padding: 8px 36px;">Trang chủ</a> -->
-</li><li class="u-nav-item">
-  <a class="u-border-3 u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" style="padding: 8px 36px;">Chuyên ngành <i class="fa fa-caret-down" aria-hidden="true"></i></a>
-
-                     <!-- <router-link to="/Majors" tag="span" class="u-border-3 u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90"  -->
-                  <!-- style="padding: 8px 36px;"> CHUYÊN NGÀNH  <i class="fa fa-caret-down" aria-hidden="true"></i></router-link>  -->
-                  <!-- </a> -->
-
-<div class="u-nav-popup">
-   <ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-12 u-nav-2">
-   <li class="u-nav-item"><a class="u-active-palette-1-light-2 u-button-style u-hover-palette-1-dark-1 u-nav-link u-palette-1-dark-2"  href="/CongNgheTriThuc">Công nghệ Tri thức</a>
-</li><li class="u-nav-item"><a class="u-active-palette-1-light-2 u-button-style u-hover-palette-1-dark-1 u-nav-link u-palette-1-dark-2" href="https://www.fit.hcmus.edu.vn/vn/LinkClick.aspx?fileticket=pqUpLNAPlak%3d&amp;tabid=1133&amp;mid=3838" target="_blank">Hệ thống Thông tin</a>
-</li><li class="u-nav-item"><a class="u-active-palette-1-light-2 u-button-style u-hover-palette-1-dark-1 u-nav-link u-palette-1-dark-2" href="https://www.fit.hcmus.edu.vn/vn/LinkClick.aspx?fileticket=83D3SQKHWTg%3d&amp;tabid=1133&amp;mid=3838" target="_blank">Khoa học Máy tính</a>
-</li><li class="u-nav-item"><a class="u-active-palette-1-light-2 u-button-style u-hover-palette-1-dark-1 u-nav-link u-palette-1-dark-2" href="/" target="_blank">Kỹ thuật Phần mềm</a>
-</li><li class="u-nav-item"><a class="u-active-palette-1-light-2 u-button-style u-hover-palette-1-dark-1 u-nav-link u-palette-1-dark-2" href="https://www.fit.hcmus.edu.vn/vn/LinkClick.aspx?fileticket=kcEqLQ2P%2fYA%3d&amp;tabid=1133&amp;mid=3838" target="_blank">Mạng máy tính &amp; Viễn thông</a>
-</li><li class="u-nav-item"><a class="u-active-palette-1-light-2 u-button-style u-hover-palette-1-dark-1 u-nav-link u-palette-1-dark-2" href="https://www.fit.hcmus.edu.vn/vn/LinkClick.aspx?fileticket=83D3SQKHWTg%3d&amp;tabid=1133&amp;mid=3838" target="_blank">Thị giác Máy tính</a>
-</li></ul>
-</div>
-</li><li class="u-nav-item"><a>
-                     <router-link to="/About" tag="span" class="u-border-3 u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" 
-                  style="padding: 8px 36px;"> GIỚI THIỆU  </router-link>
-                  </a>
-   <!-- href="Giới-thiệu.html" style="padding: 8px 36px;">Giới thiệu</a> -->
-</li></ul>
+              <li class="u-nav-item">
+                <a class="u-border-3 u-border-active-palette-1-light-1 u-border-hover-palette-1-light-1 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="/" style="padding: 8px 36px;">Trang chủ</a>
+              </li>
+              <li class="u-nav-item">
+                <a class="u-border-3 u-border-active-palette-1-light-1 u-border-hover-palette-1-light-1 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" style="padding: 8px 36px;">Chuyên ngành&nbsp;<i class="fa fa-caret-down" aria-hidden="true"></i></a>
+                <div class="u-nav-popup">
+                  <ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-12 u-nav-2">
+                    <li class="u-nav-item"><a class="u-active-palette-1-light-2 u-button-style u-hover-custom-color-6 u-nav-link u-palette-1-dark-2" @click="setMajorId(7480107)" href="/Major" target="_blank">Công nghệ Tri thức</a>
+                    </li><li class="u-nav-item"><a class="u-active-palette-1-light-2 u-button-style u-hover-custom-color-6 u-nav-link u-palette-1-dark-2" @click="setMajorId(7480104)" href="/Major" target="_blank">Hệ thống Thông tin</a>
+                    </li><li class="u-nav-item"><a class="u-active-palette-1-light-2 u-button-style u-hover-custom-color-6 u-nav-link u-palette-1-dark-2" @click="setMajorId(7480106)" href="/Major" target="_blank">Khoa học Dữ liệu</a>
+                    </li><li class="u-nav-item"><a class="u-active-palette-1-light-2 u-button-style u-hover-custom-color-6 u-nav-link u-palette-1-dark-2" @click="setMajorId(7480101)" href="/Major" target="_blank">Khoa học Máy tính</a>
+                    </li><li class="u-nav-item"><a class="u-active-palette-1-light-2 u-button-style u-hover-custom-color-6 u-nav-link u-palette-1-dark-2" @click="setMajorId(7480103)" href="/Major" target="_blank">Kỹ thuật Phần mềm</a>
+                    </li><li class="u-nav-item"><a class="u-active-palette-1-light-2 u-button-style u-hover-custom-color-6 u-nav-link u-palette-1-dark-2" @click="setMajorId(7480102)" href="/Major" target="_blank">Mạng máy tính &amp; Viễn thông</a>
+                    </li><li class="u-nav-item"><a class="u-active-palette-1-light-2 u-button-style u-hover-custom-color-6 u-nav-link u-palette-1-dark-2" @click="setMajorId(7480105)" href="/Major" target="_blank">Thị giác Máy tính</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="u-nav-item"><a class="u-border-3 u-border-active-palette-1-light-1 u-border-hover-palette-1-light-1 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="/About" style="padding: 8px 36px;">Giới thiệu</a>
+              </li>
+            </ul>
           </div>
-          <div class="u-custom-menu u-nav-container-collapse">
-            <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
-              <div class="u-inner-container-layout u-sidenav-overflow">
-                <div class="u-menu-close"></div>
-                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-3"><li class="u-nav-item"><a class="u-button-style u-nav-link" ><router-link to="/" tag="span" class="u-border-3 u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" 
-                  style="padding: 8px 36px;"> TRANG CHỦ  </router-link></a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" > CHUYÊN NGÀNH </a>
-<!-- </li><li class="u-nav-item"><a class="u-button-style u-nav-link" > <router-link to="/Majors" tag="span" > CHUYÊN NGÀNH </router-link> </a> -->
-   <div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-12 u-nav-4">
-      <li class="u-nav-item"><a class="u-button-style u-nav-link">Công nghệ Tri thức</a>
-</li><li class="u-nav-item"><a  class="u-button-style u-nav-link">Hệ thống Thông tin</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link">Khoa học Máy tính</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link">Kỹ thuật Phần mềm</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link">Mạng máy tính &amp; Viễn thông</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link">Thị giác Máy tính</a>
-</li></ul>
-</div> 
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" ><router-link to="/About" tag="span" class="u-border-3 u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" 
-                  style="padding: 8px 36px;"> GIỚI THIỆU  </router-link></a>
-</li></ul>
-              </div>
-            </div>
-            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
-          </div>
+          
         </nav>
-        <!-- <a data-page-id="1791089" class="u-border-no-bottom u-border-no-left u-border-no-top u-border-none u-border-palette-2-base u-btn u-btn-round u-button-style u-custom-font u-font-merriweather u-none u-radius-6 u-text-palette-1-dark-1 u-btn-1"> <router-link to="/" tag="span" > Gợi&nbsp;ý chuyên ngành  </router-link>  </a> -->
-      </div>
+        </div>
 </header>
 <!-- End Header -->
 
@@ -87,26 +54,77 @@
     
     <footer class="u-align-center-md u-align-center-sm u-align-center-xs u-clearfix u-footer u-grey-80" id="sec-df29"><div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
-          <div class="u-layout">
+          <div class="u-gutter-0 u-layout">
             <div class="u-layout-row">
-              <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-1">
-                <div class="u-container-layout u-valign-top u-container-layout-1">
-                  <router-link to="/" tag="span" >
-                    <img src="./assets/images/footerlogo.png" class="u-logo-image u-logo-image-1">
-                  </router-link>
-                  <!-- <a class="u-border-no-bottom u-border-no-left u-border-no-top u-border-none u-border-palette-2-base u-btn u-btn-round u-button-style u-custom-font u-font-merriweather u-none u-radius-6 u-text-palette-1-dark-1 u-btn-1"> Gợi&nbsp;ý chuyên ngành </a> -->
-                  <p class="u-align-left u-custom-font u-font-merriweather u-text u-text-1">Website gợi ý chuyên ngành cho sinh viên khoa Công nghệ Thông tin trường Đại học Khoa học Tự nhiên.</p>
+              <div class="u-container-style u-layout-cell u-size-20 u-layout-cell-1">
+                <div class="u-container-layout u-container-layout-1">
+                  <img class="u-image u-image-default u-preserve-proportions u-image-1" src="./assets/images/footerlogo.png" alt="" data-image-width="200" data-image-height="70">
+                  <p class="u-align-left u-custom-font u-font-merriweather u-text u-text-1">Website gợi ý chuyên ngành cho sinh viên khoa&nbsp; Công nghệ Thông tin trường Đại học Khoa học Tự nhiên.</p>
                 </div>
               </div>
-              <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-2">
-                <div class="u-container-layout u-valign-top-lg u-valign-top-xl u-container-layout-2">
-                  <h2 class="u-align-left u-custom-font u-font-merriweather u-subtitle u-text u-text-palette-1-dark-1 u-text-2">Liên hệ</h2>
-                  <p class="u-align-left u-text u-text-3"><span class="u-file-icon u-icon u-text-white u-icon-1"><i class="fa fa-phone" aria-hidden="true"></i></span>&nbsp;​&nbsp;+84 23456789
-                  </p>
-                  <p class="u-align-left u-text u-text-4"><span class="u-file-icon u-icon u-text-white u-icon-2"><i class="fa fa-envelope" aria-hidden="true"></i></span> contact@support.com
-                  </p>
-                  <p class="u-align-left u-text u-text-5">Copyright&nbsp;&nbsp;<span class="u-file-icon u-icon u-text-white u-icon-3"><i class="fa fa-copyright" aria-hidden="true"></i></span> 2022. All rights reserved
-                  </p>
+              <div class="u-container-style u-layout-cell u-size-20 u-layout-cell-2">
+                <div class="u-container-layout u-container-layout-2">
+                  <h2 class="u-align-left u-custom-font u-font-merriweather u-subtitle u-text u-text-palette-1-dark-1 u-text-2">Chuyên ngành</h2>
+                  <div class="u-list u-list-1">
+                    <div class="u-repeater u-repeater-1">
+                      <div class="u-container-style u-list-item u-repeater-item">
+                        <div class="u-container-layout u-similar-container u-container-layout-3">
+                          <p class="u-text u-custom-font u-font-merriweather u-text-default u-text-3">Công nghệ Tri thức</p>
+                        </div>
+                      </div>
+                      <div class="u-container-style u-list-item u-repeater-item">
+                        <div class="u-container-layout u-similar-container u-container-layout-4">
+                          <p class="u-text u-custom-font u-font-merriweather u-text-default u-text-4">Hệ thống Thông tin</p>
+                        </div>
+                      </div>
+                      <div class="u-container-style u-list-item u-repeater-item">
+                        <div class="u-container-layout u-similar-container u-container-layout-5">
+                          <p class="u-text u-custom-font u-font-merriweather u-text-default u-text-5">Kỹ thuật Phần mềm</p>
+                        </div>
+                      </div>
+                      <div class="u-container-style u-list-item u-repeater-item">
+                        <div class="u-container-layout u-similar-container u-container-layout-6">
+                          <p class="u-text u-custom-font u-font-merriweather u-text-default u-text-6">Khoa học Dữ liệu</p>
+                        </div>
+                      </div>
+                      <div class="u-container-style u-list-item u-repeater-item">
+                        <div class="u-container-layout u-similar-container u-container-layout-7">
+                          <p class="u-text u-custom-font u-font-merriweather u-text-default u-text-7">Khoa học Máy tính</p>
+                        </div>
+                      </div>
+                      <div class="u-container-style u-list-item u-repeater-item">
+                        <div class="u-container-layout u-similar-container u-container-layout-8">
+                          <p class="u-text u-custom-font u-font-merriweather u-text-default u-text-8">Mạng máy tính &amp; Viễn thông</p>
+                        </div>
+                      </div>
+                      <div class="u-container-style u-list-item u-repeater-item">
+                        <div class="u-container-layout u-similar-container u-container-layout-9">
+                          <p class="u-text u-custom-font u-font-merriweather u-text-default u-text-9">Thị giác Máy tính</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="u-container-style u-layout-cell u-size-20 u-layout-cell-3">
+                <div class="u-container-layout u-container-layout-10">
+                  <h2 class="u-align-left u-custom-font u-font-merriweather u-subtitle u-text u-text-palette-1-dark-1 u-text-10">Liên hệ</h2>
+                  <div class="u-list u-list-2">
+                    <div class="u-repeater u-repeater-2">
+                      <div class="u-container-style u-list-item u-repeater-item">
+                        <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-11">
+                          <p class="u-align-left u-text u-text-11"> &nbsp;<span class="u-file-icon u-icon u-text-white u-icon-1"><i class="fa fa-phone" aria-hidden="true"></i></span>+84 23456789
+                          </p>
+                        </div>
+                      </div>
+                      <div class="u-container-style u-list-item u-repeater-item">
+                        <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-12">
+                          <p class="u-align-left u-text u-custom-font u-font-merriweather u-text-12"> &nbsp;<span class="u-file-icon u-icon u-text-white u-icon-2"><i class="fa fa-envelope" aria-hidden="true"></i></span>contact@support.com
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -126,6 +144,12 @@
 <script>
 export default {
   name: 'App',
+
+  methods: {
+    setMajorId(id) {
+      localStorage.MajorId = id;
+    }
+  }
 }
 </script>
 
