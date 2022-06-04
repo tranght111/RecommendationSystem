@@ -141,7 +141,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
-  margin: 40px 30px;
+  margin: 20px 30px 40px;
   padding: 10px 21px;
 }
 
@@ -285,3 +285,26 @@
   transform: scale(1.33);
 }
 
+.point-input {
+  margin: 5px 54px;
+}
+
+.point-input > label {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-top: .5rem;
+  margin-bottom: .3rem;
+}
+
+input[type=text] {
+  box-sizing: border-box;
+  height: 40px;
+  border: 2px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+
+input[type=text]:focus {
+  border: 2px solid #555;
+}
