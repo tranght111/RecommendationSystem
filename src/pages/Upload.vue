@@ -7,7 +7,7 @@
             <div class="u-form u-form-1">
                         <div class="u-form-group u-form-group-15">
                           <label for="text-871d" class="u-label u-label-1">Mã số sinh viên</label>
-                          <input type="text" placeholder="Nhập vào MSSV" id="text-871d" name="mssv" v-model="mssv" @change="setMSSV(mssv)" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"  >
+                          <input type="text" placeholder="Nhập vào MSSV" id="text-871d" autofocus name="mssv" v-model="mssv" @change="setMSSV(mssv)" :style="MssvStyle" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"  >
                         </div>
                       </div>
             <p class="u-text u-text-22"> Lưu ý: Sinh viên chỉ chọn 1 trong 2 lựa chọn bên dưới&nbsp;để cung cấp thông tin bảng điểm của mình.&nbsp;</p>
@@ -15,12 +15,12 @@
             <div class="u-text u-text-default u-text-palette-1-dark-1 u-text-3">
             <input type="radio" id="p1" value="Plan1" v-model="PlanPicked" />
             <span v-if="PlanPicked === 'Plan2'">
-              <label :style="StylePlanNonDisplay" for="p1">&nbsp; Lựa chọn 1: Tải lên bảng điểm&nbsp;</label>
+              <label :style="StylePlanNonDisplay" for="p1">&nbsp; Lựa chọn 1: Tải lên bảng điểm dạng Excel</label>
               <!-- <span :style="StylePlanNonDisplay" style="font-weight: 400; font-style: italic;">(chỉ chấp nhận tệp tin Excel)</span> -->
             </span>
             <span v-else>
-              <label for="p1">&nbsp; Lựa chọn 1: Tải lên bảng&nbsp;điểm&nbsp; </label>
-              <span style="font-weight: 400; font-style: italic; color: red; font-size: 1.125rem">(chỉ chấp nhận tệp tin Excel)</span>
+              <label for="p1">&nbsp; Lựa chọn 1: Tải lên bảng điểm dạng Excel</label>
+              
             </span>
             </div>
             <!-- PLAN 1 -->
@@ -44,15 +44,14 @@
             </div>
             <form>
               <!-- <label class="u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-1" for="fileExcel" ><i class="fa fa-upload" aria-hidden="true"></i>&nbsp;Tải tệp tin </label> -->
-              <input type="file" v-on:change="uploadFile($event)" style="padding-left: 55px" id="fileExcel">
+              <input type="file" accept=".xls,.xlsx" v-on:change="uploadFile($event)" style="padding-left: 55px" id="fileExcel">
+              <!-- <span style="font-weight: 400; font-style: italic; color: red; font-size: 1.125rem">(chỉ chấp nhận tệp tin Excel)</span> -->
               <!-- <a class="u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-1"><i class="fa fa-upload" aria-hidden="true"></i>&nbsp;Tải tệp tin</a> -->
             </form>
             <!-- </div> -->
             </div>
             <!-- END PLAN 1 -->
-            <!-- <p class="u-text u-text-palette-1-dark-1 u-text-22" style="font-size: 16px; padding-left: 20px"><i class="fa fa-arrow-down" aria-hidden="true"></i> Nhập MSSV bên dưới và nhấn Lưu </p> -->
             <div class="u-border-1 u-border-grey-dark-1 u-line u-line-horizontal u-line-1"></div>
-            <!-- <p class="u-text u-text-default u-text-5">Lựa chọn 2: Nhập các thông tin&nbsp;điểm bên dưới</p> -->
             <div class="u-text u-text-default u-text-palette-1-dark-1 u-text-5">
             <input type="radio" id="p2" value="Plan2" v-model="PlanPicked" />
             <span v-if="PlanPicked === 'Plan1'">
@@ -62,95 +61,38 @@
             </div>
             <!-- PLAN 2 -->
             <div v-if="PlanPicked === 'Plan2'"> 
-            <div class="u-clearfix u-layout-wrap u-layout-wrap-1">
-              <div class="u-layout">
-                <div class="u-layout-row">
-                  <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-1">
-                    <div class="u-container-layout u-container-layout-3">
-                      <div class="u-form u-form-1">
-                        <form action="#" method="POST" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 10px;">
-                          <div class="u-form-group u-form-name">
-                            <label for="name-7f32" class="u-label u-label-1">Cơ sở trí tuệ nhân tạo</label>
-                            <input type="text" placeholder="Nhập điểm" id="name-7f32" name="cosotrituenhantao" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
-                          </div>
-                          <div class="u-form-group">
-                            <label for="email-7f32" class="u-label u-label-1">Nhập môn lập trình</label>
-                            <input type="text" placeholder="Nhập điểm" id="email-7f32" name="nhapmonlaptrinh" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"  >
-                          </div>
-                          <div class="u-form-group">
-                            <label for="message-7f32" class="u-label u-label-1">Kỹ thuật lập trình</label>
-                            <input placeholder="Nhập điểm" rows="1" cols="50" id="message-7f32" name="kythuatlaptrinh" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"   type="text">
-                          </div>
-                          <div class="u-form-group">
-                            <label for="text-9df3" class="u-label u-label-1">Phương pháp lập trình hướng đối tượng</label>
-                            <input type="text" id="text-9df3" name="phuongphaplaptrinhhuongdoituong" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"   placeholder="Nhập điểm">
-                          </div>
-                          <div class="u-form-group">
-                            <label for="text-69d1" class="u-label u-label-1">Cấu trúc dữ liệu và giải thuật</label>
-                            <input type="text" placeholder="Nhập điểm" id="text-69d1" name="cautrucdulieuvagiaithuat" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"  >
-                          </div>
-                          <div class="u-form-group">
-                            <label for="text-b499" class="u-label u-label-1">Cơ sở dữ liệu</label>
-                            <input type="text" placeholder="Nhập điểm" id="text-b499" name="cosodulieu" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"  >
-                          </div>
-                          <div class="u-form-group">
-                            <label for="text-5ea4" class="u-label u-label-1">Hệ điều hành</label>
-                            <input type="text" placeholder="Nhập điểm" id="text-5ea4" name="hedieuhanh" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"  >
-                          </div>
-                         
-                          <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
-                          <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
-                          <input type="hidden" value="" name="recaptchaResponse">
-                        </form>
-                      </div>
-                        
+              <div class="row">
+                <div class="col-6">
+                  <div v-for="(mh, index) in MonHocs" :key="index">
+                    <div class="point-input" v-if="index <= MonHocs.length/2 - 1">
+                      <label :for="mh.MonHocId"> {{mh.TenMonHoc}} </label>
+                      <input type="text" :id="mh.MonHocId" placeholder="Nhập điểm" v-model="Diem[mh.MonHocId]" :style="inputAlerts[mh.MonHocId]" @change="defaultInputClass(mh.MonHocId)" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"> 
                     </div>
                   </div>
-                  <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-2">
-                    <div class="u-container-layout u-valign-top u-container-layout-4">
-                      <div class="u-form u-form-2">
-                        <form action="#" method="POST" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form-1" style="padding: 10px;">
-                          <div class="u-form-group u-form-name">
-                            <label for="name-0c26" class="u-label u-label-1">Mạng máy tính</label>
-                            <input type="text" placeholder="Nhập điểm" id="name-0c26" name="mangmaytinh" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" >
-                          </div>
-                          <div class="u-form-group">
-                            <label for="email-0c26" class="u-label u-label-1">Hệ thống máy tính</label>
-                            <input type="text" placeholder="Nhập điểm" id="email-0c26" name="hethongmaytinh" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"  >
-                          </div>
-                          <div class="u-form-group">
-                            <label for="message-0c26" class="u-label u-label-1">Đại số tuyến tính</label>
-                            <input placeholder="Nhập điểm" rows="4" cols="50" id="message-0c26" name="daisotuyentinh" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"   type="text">
-                          </div>
-                          <div class="u-form-group">
-                            <label for="text-c140" class="u-label u-label-1">Xác suất thống kê</label>
-                            <input type="text" placeholder="Nhập điểm" id="text-c140" name="xacsuatthongke" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"  >
-                          </div>
-                          <div class="u-form-group">
-                            <label for="text-9aed" class="u-label u-label-1">Vi tích phân 1B</label>
-                            <input type="text" placeholder="Nhập điểm" id="text-9aed" name="vitichphan1b" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"  >
-                          </div>
-                          <div class="u-form-group">
-                            <label for="text-871d" class="u-label u-label-1">Vi tích phân 2B</label>
-                            <input type="text" placeholder="Nhập điểm" id="text-871d" name="vitichphan2b" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"  >
-                          </div>
-                          
-                          <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
-                          <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
-                          <input type="hidden" value="" name="recaptchaResponse">
-                        </form>
-                      </div>
-                        
+                </div>
+                <div class="col-6">
+                  <div v-for="(mh, index) in MonHocs" :key="index">
+                    <div class="point-input" v-if="index > MonHocs.length/2 - 1">
+                      <label :for="mh.MonHocId"> {{mh.TenMonHoc}} </label>
+                      <input type="text" :id="mh.MonHocId" placeholder="Nhập điểm" v-model="Diem[mh.MonHocId]" :style="inputAlerts[mh.MonHocId]" @change="defaultInputClass(mh.MonHocId)" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"> 
                     </div>
                   </div>
                 </div>
               </div>
             </div>
             <!-- </div> -->
-            </div>
+            <!-- </div> -->
             <!-- END PLAN 2 -->
             <div class="u-align-center">
-              <a href="/Test" v-on:click="submitFile()" class="u-btn u-btn-submit u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-4"> Lưu </a>
+              <br>
+              <a :style="alertClass"> Vui lòng nhập đầy đủ thông tin! </a><br>
+              <div v-if="PlanPicked === 'Plan1'">
+                <a v-on:click="submitFile()" class="u-btn u-btn-submit u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-4"> Lưu </a>
+              </div>
+              <div v-else>
+                <a v-on:click="submitDiem()" class="u-btn u-btn-submit u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-4"> Lưu </a>
+              </div>
+
               <!-- <button type="button" class="u-btn u-btn-submit u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-4" data-toggle="modal" data-target="#saveModal"> Lưu
               </button> -->
               <!-- <input type="submit" value="submit" class="u-form-control-hidden"> -->
@@ -194,17 +136,34 @@ export default {
       return {
         StylePlanNonDisplay: {
           color: '#adcce9',
-
         },
         PlanPicked: 'Plan1',
         fileDiem: null,
         mssv: '',
+        MonHocs: [],
+        Diem: [],
+        isComplete: false,
+        alertClass: {
+          color: 'white',
+        },
+        inputAlertClass: {
+          border: '1px solid red'
+        },
+        inputAlerts:[],
+        isChangeMssv: false,
+        MssvStyle: ''
       }
+    },
+
+    mounted() {
+      this.getMonHocXetChuyenNganh();
     },
 
     methods: {
       setMSSV(mssv) {
         localStorage.SMssv = mssv;
+        this.isChangeMssv = true;
+        this.MssvStyle = '';
       },
 
       uploadFile(event){
@@ -218,19 +177,51 @@ export default {
                 alert("success " + response.data);
             });
       },
+
+      getMonHocXetChuyenNganh() {
+        axios.get("https://localhost:44326/api/MonHocCSNvaToan?selectlatest=true").then((response)=>{
+            this.MonHocs = response.data;
+        });
+        
+      },
+
       submitFile(){
-        // let formData = new FormData();
-        // formData.append('file', this.fileDiem);
-        // if (formData){
-        //   const reader = new FileReader();
-        // }
-        // axios.post("https://localhost:44326/api/diems", formData).then((response) => {
-        //         alert("success " + response.data);
-        //     }).catch(error => {
-        //         console.log(error);
-        //     });
+        
+      },
+
+      submitDiem(){
+        this.isComplete = true;
+        if (!this.isChangeMssv) {
+          this.MssvStyle = this.inputAlertClass;
+        }
+
+        for (let i = 0; i < this.MonHocs.length; i++) {
+          if (!this.Diem[this.MonHocs[i].MonHocId]) {
+            this.isComplete = false;
+            this.inputAlerts[this.MonHocs[i].MonHocId] = this.inputAlertClass;
+          }
+        }
+
+        if (!this.isComplete || !this.isChangeMssv) {
+          this.alertClass.color = 'red';
+        }
+        else {
+          for (let i = 0; i < this.MonHocs.length; i++) {
+            axios.post("https://localhost:44326/api/Diem", {
+              MonHocId: this.MonHocs[i].MonHocId,
+              MSSV: mssv,
+              DiemMH: this.Diem[this.MonHocs[i].MonHocId]
+            })
+        }
+          // window.location = "/Test";
+          this.isComplete = false;
+        }
+      },
+
+      defaultInputClass(id) {
+        this.inputAlerts[id] = '';
       }
-    }
+    },
 }
 
 
