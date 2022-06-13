@@ -17,7 +17,7 @@
           <div class="grid-container u-question-sheet">
             <div v-for="(q, index) in Questions" :key="index">
               <a :href="'#'+ q.BaiDanhGiaDinhHuongNgheNghiepId" v-if="quesNav[index, q.BaiDanhGiaDinhHuongNgheNghiepId]" class="quesNav a-ques picked">{{index + 1}}</a>
-              <a :href="'#'+ q.BaiDanhGiaDinhHuongNgheNghiepId" v-else class="a-ques" :style="alertClass">{{index + 1}}</a>
+              <a :href="'#'+ q.BaiDanhGiaDinhHuongNgheNghiepId" v-else class="a-ques" :style="alertQuesClass">{{index + 1}}</a>
             </div>
           </div>
         </div>
@@ -36,9 +36,11 @@
             <label class="u-text u-custom-font u-font-merriweather" for="a4">Không hứng thú</label>
             <!-- End Answer -->
           </div> <!--End v-for -->
-          <div class="u-align-center u-next" style="padding: 30px 0;" @click="commitAnswers()" >
-            <a v-if="isComplete" href="/Result" class="u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-custom-font u-font-merriweather u-btn-next">Lưu</a>
-            <a v-else class="u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-custom-font u-font-merriweather u-btn-next">Lưu</a>
+          <div class="u-align-center"><br>
+            <a :style="alertClass"> {{alertContent}} </a>
+          </div>
+          <div class="u-align-center u-next" style="padding: 0 0 20px;" @click="commitAnswers()" >
+            <a class="u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-custom-font u-font-merriweather u-btn-next">Lưu</a>
           </div>
         </div>
       </div>
@@ -60,9 +62,13 @@ export default {
         background: 'darkred',
         color: 'white',
       },
-      alertClass: '',
+      alertQuesClass: '',
       isComplete: false,
       mssv: localStorage.SMssv,
+      alertClass: {
+          color: 'white',
+        },
+      alertContent: '',
     };
   },
 
@@ -84,9 +90,10 @@ export default {
     commitAnswers() {
       this.isComplete = true;
 
-        for (let i = 0; i < this.Questions.length; i++) {
-          this.quesNav[i, this.Questions[i].BaiDanhGiaDinhHuongNgheNghiepId] = 3;
-        }
+      //test
+      // for (let i = 0; i < this.Questions.length; i++) {
+      //     this.quesNav[i, this.Questions[i].BaiDanhGiaDinhHuongNgheNghiepId] = 2;
+      //   }
       
       for (let i = 0; i < this.Questions.length; i++) {
         if (!this.quesNav[i,this.Questions[i].BaiDanhGiaDinhHuongNgheNghiepId]) {
@@ -96,8 +103,9 @@ export default {
       }
 
       if (!this.isComplete) {
-        this.alertClass = this.alertColor;
-        alert("Vui lòng trả lời tất cả câu hỏi để sang bước tiếp theo!");
+        this.alertQuesClass = this.alertColor;
+        this.alertClass.color = 'red';
+        this.alertContent = 'Vui lòng trả lời tất cả câu hỏi để sang bước tiếp theo!';
       }
       else {
         for (let i = 0; i < this.Questions.length; i++) {
@@ -111,7 +119,16 @@ export default {
           })
         }
 
-        if (!this.isComplete) alert("Đã xảy ra lỗi, vui lòng thử lại!");
+        if (!this.isComplete) {
+          this.alertClass.color = 'red';
+          this.alertContent = 'Đã xảy ra lỗi, vui lòng thử lại!';
+        }
+        else {
+          this.alertClass.color = 'blue';
+          this.alertContent = 'Đã lưu câu trả lời của bạn!';
+          window.location = "/Result";
+        }
+
       }
     }
   }

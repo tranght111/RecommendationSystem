@@ -9,10 +9,11 @@
 
 .u-test .u-question-sheet {
   height: 600px;
-  width: 260px;
+  width: 270px;
   margin: 10px auto auto 50px;
   position: sticky;
   top: 110px;
+  overflow: auto;
 }
 
 .u-test .u-question-sheet .quesNav {
@@ -28,7 +29,7 @@
 }
 
 .u-test .u-test-sheet {
-  margin-left: 0px;
+  margin-left: 20px;
 }
 
 .grid-container {
@@ -119,7 +120,7 @@
 .u-answer > label {
   font-size: 17px;
   /* cursor: pointer; */
-  padding-right: calc(5%);
+  padding-right: calc(2%);
 }
 
 .u-next {
