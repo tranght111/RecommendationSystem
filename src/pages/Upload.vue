@@ -85,7 +85,7 @@
             <!-- END PLAN 2 -->
             <div class="u-align-center">
               <br>
-              <a :style="alertClass"> Vui lòng nhập đầy đủ thông tin! </a><br>
+              <a :style="alertClass"> {{alertContent}} </a><br>
               <div v-if="PlanPicked === 'Plan1'">
                 <a v-on:click="submitFile()" class="u-btn u-btn-submit u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-4"> Lưu </a>
               </div>
@@ -96,26 +96,6 @@
               <!-- <button type="button" class="u-btn u-btn-submit u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-4" data-toggle="modal" data-target="#saveModal"> Lưu
               </button> -->
               <!-- <input type="submit" value="submit" class="u-form-control-hidden"> -->
-            </div>
-            <div id="saveModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-              <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title mt-0" id="myModalLabel">Lưu bảng điểm</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                    </button>
-                  </div>
-                <div class="modal-body">
-                  <h5 class="font-16">Đã lưu thông tin bảng điểm!</h5>
-                  <p></p>
-                  </div>
-                <div class="modal-footer">
-                  <!-- <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Hủy</button> -->
-                  <button type="button" class="btn btn-primary waves-effect waves-light">Làm bài đánh giá</button>
-                </div>
-              </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
             </div>
           </div>
         </div>
@@ -146,11 +126,13 @@ export default {
         alertClass: {
           color: 'white',
         },
+        alertContent: '',
         inputAlertClass: {
           border: '1px solid red'
         },
         inputAlerts:[],
         isChangeMssv: false,
+        isUploadFile: false,
         MssvStyle: ''
       }
     },
@@ -168,14 +150,7 @@ export default {
 
       uploadFile(event){
         this.fileDiem = event.target.files[0];
-        let formData = new FormData();
-        formData.append('file', this.fileDiem);
-        if (formData){
-          const reader = new FileReader();
-        }
-        axios.post("https://localhost:44326/api/diems", formData).then((response) => {
-                alert("success " + response.data);
-            });
+        this.isUploadFile = true;
       },
 
       getMonHocXetChuyenNganh() {
@@ -186,7 +161,35 @@ export default {
       },
 
       submitFile(){
-        
+        let formData = new FormData();
+        formData.append("formFile", this.fileDiem);
+
+        if (!this.isChangeMssv) {
+          this.MssvStyle = this.inputAlertClass;
+        }
+        if (this.fileDiem != null && this.isChangeMssv && this.isUploadFile) {
+          axios.post("https://localhost:44326/api/SinhVien?mssv=" + localStorage.SMssv);
+
+          axios.post("https://localhost:44326/api/ReadStudentExcelFile?MSSV=" + localStorage.SMssv, formData,{
+            headers: {
+              'Content-Type': 'multipart/form-data'
+            }
+          }).then((response) => {
+                if (response.data){
+                  this.alertClass.color = 'blue';
+                  this.alertContent = 'Đã lưu thông tin điểm của bạn!';
+                  window.location = "/Test";
+                }
+                else {
+                  this.alertClass.color = 'red';
+                  this.alertContent = 'Đã xảy ra lỗi, vui lòng thử lại!';
+                }
+            });
+        }
+        else {
+          this.alertClass.color = 'red';
+          this.alertContent = 'Vui lòng nhập đầy đủ thông tin!';
+        }
       },
 
       submitDiem(){
@@ -201,20 +204,29 @@ export default {
             this.inputAlerts[this.MonHocs[i].MonHocId] = this.inputAlertClass;
           }
         }
-
+        
         if (!this.isComplete || !this.isChangeMssv) {
           this.alertClass.color = 'red';
+          this.alertContent = 'Vui lòng nhập đầy đủ thông tin!';
         }
-        else {
+        else if (this.isComplete && this.isChangeMssv)
+        {
+          axios.post("https://localhost:44326/api/SinhVien?mssv=" + localStorage.SMssv);
+
           for (let i = 0; i < this.MonHocs.length; i++) {
             axios.post("https://localhost:44326/api/Diem", {
               MonHocId: this.MonHocs[i].MonHocId,
-              MSSV: mssv,
+              MSSV: localStorage.SMssv,
               DiemMH: this.Diem[this.MonHocs[i].MonHocId]
             })
-        }
-          // window.location = "/Test";
+          
+          this.alertClass.color = 'blue';
+          this.alertContent = 'Đã lưu thông tin điểm của bạn!';
+
+          window.location = "/Test";
           this.isComplete = false;
+        }
+          
         }
       },
 
