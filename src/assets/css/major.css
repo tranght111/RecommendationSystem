@@ -609,10 +609,16 @@
   max-width: 240px;
   max-height: 48px;
   padding-left: 20px;
+  background-color: transparent !important;
 }
 
 .u-major-icon {
   width: 32px;
   height: 32px;
   padding-left: 0;
+}
+
+.mh-container {
+  height: 600px;
+  overflow: auto;
 }

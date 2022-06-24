@@ -1,56 +1,189 @@
 <template>
-    <section class="u-clearfix u-white u-section-1" id="sec-f3fb">
-      <div class="u-clearfix u-sheet u-sheet-1">
-        <h1 class="u-custom-font u-font-merriweather u-text u-text-default u-title u-result-text-1" style="font-size: 30px">Kết quả gợi&nbsp;ý chuyên ngành</h1>
-        <div class="u-clearfix u-expanded-width u-gutter-0 u-layout-wrap u-layout-wrap-1">
-          <div class="u-layout" style="">
-            <div class="u-layout-row" style="">
-              <div class="u-align-left u-container-style u-layout-cell u-left-cell u-shape-rectangle u-size-30 u-size-xs-60 u-layout-cell-1" src="" data-animation-name="customAnimationIn" data-animation-duration="5000">
-                <div class="u-container-layout u-valign-top u-container-layout-1" src="">
-                  <img class="u-expanded-width u-image u-image-1" src="../assets/images/radarchart-lines.png" data-image-width="1056" data-image-height="1056">
-                </div>
+<section class="result u-custom-font u-font-merriweather">
+  <div class="result-title">
+    <a class="u-custom-font u-font-merriweather"> Xin chào </a>
+    <a class="u-custom-font u-font-courier-new u-mssv" style="color: #db545a;"> {{mssv}} </a>
+    <a class="u-custom-font u-font-merriweather">! {{TextShowing}}  </a> <br>
+    <!-- <div> <a class="loader"></a> </div>
+    <div> <a class="loader"></a> </div>
+    <div> <a class="loader"></a> </div> -->
+  </div>
+  <div class="container-fluid">
+      <div class="row">
+        <div class="col-5">
+          <apexchart type="radar" height="650"
+                    :options="chartOptions"
+                    :series="series"
+                  ></apexchart>
+        </div>
+        <div class="col-7">
+          <div class="container">
+            <div class="grid-container" v-for="(m, index) in Majors" :key="index">
+              <div class="item1" v-if="index === 0">
+                <p class="title"> {{index + 1}}. {{m.TenChuyenNganh}} - phù hợp {{m.TongPhanTram}}%</p>
+                <p class="note">{{m.GioiThieuChuyenNganh}}</p>
               </div>
-              <div class="u-align-left u-container-style u-layout-cell u-right-cell u-size-30 u-size-xs-60 u-white u-layout-cell-2">
-                <div class="u-container-layout u-container-layout-2" style="max-width: 95%">
-                  <h3 class="u-text u-result-text-2">
-                    <span style="font-size: 1.875rem; font-weight: 700;" class="u-text-custom-color-2">1. Kỹ thuật phần mềm - phù hợp 66%</span>
-                    <span class="u-text-black">
-                      <br>
-                    </span>
-                  </h3>
-                  <h5 class="u-text u-result-text-3">
-                    <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1" href="/KyThuatPhanMem" target="_blank">Xem thông tin chuyên ngành</a>
-                  </h5>
-                  <h3 class="u-text u-result-text-4">2. Hệ thống thông tin - phù hợp 43%<br>
-                  </h3>
-                  <h5 class="u-text u-result-text-5">
-                    <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-2" href="/HeThongThongTin" target="_blank">Xem thông tin chuyên ngành</a>
-                  </h5>
-                  <h3 class="u-text u-result-text-6">3. Khoa học máy tính - phù hợp 24%<br>
-                  </h3>
-                  <h5 class="u-text u-result-text-7">
-                    <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-3" href="/KhoaHocMayTinh" target="_blank">Xem thông tin chuyên ngành</a>
-                  </h5>
-                  <h3 class="u-text u-result-text-8">4. Thị giác máy tính - phù hợp 19%<br>
-                  </h3>
-                  <h5 class="u-text u-result-text-9">
-                    <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-4" href="/ThiGiacMayTinh" target="_blank">Xem thông tin chuyên ngành</a>
-                  </h5>
-                  <h3 class="u-text u-result-text-10">5. Công nghệ tri thức - phù hợp 19%<br>
-                  </h3>
-                  <h5 class="u-text u-result-text-11">
-                    <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-5" href="/CongNgheTriThuc" target="_blank">Xem thông tin chuyên ngành</a>
-                  </h5>
-                  <h3 class="u-text u-result-text-12">6. Mạng máy tính &amp; viễn thông - phù hợp 19%<br>
-                  </h3>
-                  <h5 class="u-text u-result-text-13">
-                    <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-6" href="/MangMayTinh&amp;VienThong" target="_blank">Xem thông tin chuyên ngành</a>
-                  </h5>
-                </div>
+              <div class="item2" v-else> 
+                <p class="title"> {{index + 1}}. {{m.TenChuyenNganh}} - phù hợp {{m.TongPhanTram}}%</p>
+                <p class="note">{{m.GioiThieuChuyenNganh}}</p>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+  </div>
+</section>
 </template>
+
+<script>
+import axios from 'axios';
+
+import VueApexCharts from "vue3-apexcharts";
+
+//ApexChart
+export default {
+  name: "Result",
+  components: {
+    apexchart: VueApexCharts,
+  },
+  data: function() {
+    return {
+      chartOptions: {
+            chart: {
+              id: 'radarChart',
+              height: 550,
+              type: 'radar',
+            },
+            dataLabels: {
+              enabled: true
+            },
+            plotOptions: {
+              radar: {
+                size: 230,
+                polygons: {
+                  strokeColors: '#e9e9e9',
+                  fill: {
+                    colors: ['#f8f8f8', '#fff']
+                  }
+                }
+              }
+            },
+            title: {
+              text: ''
+            },
+            colors: ['#FF4560'],
+            markers: {
+              size: 4,
+              colors: ['#425465'],
+              strokeColor: '#425465',
+              strokeWidth: 2,
+            },
+            tooltip: {
+              y: {
+                formatter: function(val) {
+                  return val
+                }
+              }
+            },
+            xaxis: {
+              categories: [],
+            },
+            yaxis: {
+              tickAmount: 5,
+              labels: {
+                formatter: function(val, i) {
+                  if (i % 2 === 0) {
+                    return val
+                  } else {
+                    return ''
+                  }
+                }
+              },
+              min: 0,
+              max: 100
+            }
+          },
+      series: [{
+            name: 'percent',
+            data: [],
+          }],
+      mssv : localStorage.SMssv,
+      hptPosted: false,
+      suggestPosted: false,
+      Majors: [],
+      MajorNames: [],
+      Percents: [],
+      TextShowing: 'Hệ thống đang tính kết quả ...',
+      fit4uURL: //'https://localhost:44326'
+                'https://fit4u-admin.somee.com'
+    };
+  }, //end data
+
+  mounted(){
+    if (localStorage.Tested) {
+      this.postHuongPhatTrienSV();
+    }
+    else this.postSuggestion();
+    //this.getRecommandtionResult();
+  },
+
+  methods:{
+    postHuongPhatTrienSV(){
+      axios.post(this.fit4uURL + "/api/HuongPhatTrienSV?mssv=" + this.mssv).then((response) => {
+        this.hptPosted = true;
+        
+        this.postSuggestion();
+      })
+    },
+
+    postSuggestion(){
+      axios.post(this.fit4uURL + "/api/KetQuaChuyenNganh?mssv=" + this.mssv).then((response) => {
+        this.suggestPosted = true;
+        
+        this.getRecommandtionResult();
+      })
+    },
+
+    getRecommandtionResult(){
+      axios.get(this.fit4uURL + "/api/KetQuaChuyenNganh/" + this.mssv).then((response)=>{
+            this.Majors = response.data;
+            this.TextShowing = 'Gợi ý chuyên ngành dành cho bạn là:';
+            this.getChartData();
+            this.sortMajors();
+            
+        });
+        
+    },
+
+    sortMajors(){
+
+      for (let i = 0; i < this.Majors.length; i++)
+        for (let j = i + 1; j < this.Majors.length; j++) {
+          //if (this.Majors[i].ThuTu < this.Majors[j].ThuTu){
+          if (this.Majors[i].TongPhanTram < this.Majors[j].TongPhanTram){
+            let temp = this.Majors[i];
+            this.Majors[i] = this.Majors[j];
+            this.Majors[j] = temp;
+          }
+        }
+    },
+
+    getChartData(){
+      for (let i = 0; i < this.Majors.length; i++){
+        this.MajorNames[i] = this.Majors[i].TenChuyenNganh;
+        this.Percents[i] = this.Majors[i].PhanTram;
+        
+      };
+      this.series.forEach((serie) => {
+          serie.data = this.Percents;
+        });
+      
+      ApexCharts.exec('radarChart', "updateOptions", {
+        xaxis: {
+          categories: this.MajorNames,
+        }
+      })
+    }
+  }
+};
+</script>
