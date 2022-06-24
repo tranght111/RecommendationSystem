@@ -120,11 +120,10 @@ export default {
   }, //end data
 
   mounted(){
-    if (localStorage.Tested) {
+    if (localStorage.Tested == true) {
       this.postHuongPhatTrienSV();
     }
     else this.postSuggestion();
-    //this.getRecommandtionResult();
   },
 
   methods:{

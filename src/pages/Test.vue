@@ -16,7 +16,7 @@
         <div class="col-3">
           <div class="grid-container u-question-sheet">
             <div v-for="(q, index) in Questions" :key="index">
-              <a :href="'#'+ q.BaiDanhGiaDinhHuongNgheNghiepId" v-if="quesNav[index, q.BaiDanhGiaDinhHuongNgheNghiepId] >= 0 && quesNav[index, q.BaiDanhGiaDinhHuongNgheNghiepId] <= 3" 
+              <a :href="'#'+ q.BaiDanhGiaDinhHuongNgheNghiepId" v-if="quesNav[index, q.BaiDanhGiaDinhHuongNgheNghiepId]==='0' || quesNav[index, q.BaiDanhGiaDinhHuongNgheNghiepId]==='1' || quesNav[index, q.BaiDanhGiaDinhHuongNgheNghiepId]==='2'|| quesNav[index, q.BaiDanhGiaDinhHuongNgheNghiepId]==='3'" 
                 class="quesNav a-ques picked">{{index + 1}}</a>
               <a :href="'#'+ q.BaiDanhGiaDinhHuongNgheNghiepId" v-else class="a-ques" :style="alertQuesClass">{{index + 1}}</a>
             </div>
@@ -85,7 +85,14 @@ export default {
     refreshData(){
         axios.get(this.fit4uURL + "/api/BaiDanhGiaDinhHuongNgheNghiep").then((response)=>{
             this.Questions = response.data;
+            this.setAnswer();
         });
+    },
+
+    setAnswer(){
+      for (let i = 0; i < this.Questions.length; i++){
+        this.quesNav[i, this.Questions[i].BaiDanhGiaDinhHuongNgheNghiepId] = -1;
+      }
     },
 
     postAnswer(MucDo,QuesId, Mssv) {
@@ -106,7 +113,8 @@ export default {
       //   }
       
       for (let i = 0; i < this.Questions.length; i++) {
-        if (this.quesNav[i,this.Questions[i].BaiDanhGiaDinhHuongNgheNghiepId] < 0 && this.quesNav[i,this.Questions[i].BaiDanhGiaDinhHuongNgheNghiepId] > 3) {
+        let t = this.quesNav[i,this.Questions[i].BaiDanhGiaDinhHuongNgheNghiepId];
+        if ( t != '0' && t != '1' && t != '2' && t != '3'){ 
           this.isComplete = false;
           break;
         }
