@@ -16,7 +16,8 @@
         <div class="col-3">
           <div class="grid-container u-question-sheet">
             <div v-for="(q, index) in Questions" :key="index">
-              <a :href="'#'+ q.BaiDanhGiaDinhHuongNgheNghiepId" v-if="quesNav[index, q.BaiDanhGiaDinhHuongNgheNghiepId]" class="quesNav a-ques picked">{{index + 1}}</a>
+              <a :href="'#'+ q.BaiDanhGiaDinhHuongNgheNghiepId" v-if="quesNav[index, q.BaiDanhGiaDinhHuongNgheNghiepId] >= 0 && quesNav[index, q.BaiDanhGiaDinhHuongNgheNghiepId] <= 3" 
+                class="quesNav a-ques picked">{{index + 1}}</a>
               <a :href="'#'+ q.BaiDanhGiaDinhHuongNgheNghiepId" v-else class="a-ques" :style="alertQuesClass">{{index + 1}}</a>
             </div>
           </div>
@@ -39,7 +40,7 @@
           <div class="u-align-center"><br>
             <a :style="alertClass"> {{alertContent}} </a>
           </div>
-          <div class="u-align-center u-next" style="padding: 0 0 20px;" @click="commitAnswers()" >
+          <div class="u-align-center u-next" style="padding: 0 0 20px;" @click="commitAnswers()">
             <a class="u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-custom-font u-font-merriweather u-btn-next">Lưu</a>
           </div>
         </div>
@@ -69,22 +70,30 @@ export default {
           color: 'white',
         },
       alertContent: '',
+      action: false,
+      fit4uURL: //'https://localhost:44326'
+                'https://fit4u-admin.somee.com'
     };
   },
 
   mounted() {
     this.refreshData();
+    localStorage.Tested = false;
   },
 
   methods:{
     refreshData(){
-        axios.get("https://localhost:44326/api/BaiDanhGiaDinhHuongNgheNghiep").then((response)=>{
+        axios.get(this.fit4uURL + "/api/BaiDanhGiaDinhHuongNgheNghiep").then((response)=>{
             this.Questions = response.data;
         });
     },
 
     postAnswer(MucDo,QuesId, Mssv) {
-      axios.post("https://localhost:44326/api/KetQuaBaiDanhGia", MucDo,parseInt(QuesId), Mssv);
+      axios.post(this.fit4uURL + "/api/KetQuaBaiDanhGia", MucDo,parseInt(QuesId), Mssv);
+    },
+
+    goToResult(){
+      setTimeout(() => window.location = "/Result", 1500)
     },
 
     commitAnswers() {
@@ -92,11 +101,12 @@ export default {
 
       //test
       // for (let i = 0; i < this.Questions.length; i++) {
-      //     this.quesNav[i, this.Questions[i].BaiDanhGiaDinhHuongNgheNghiepId] = 2;
+      //     this.quesNav[i, this.Questions[i].BaiDanhGiaDinhHuongNgheNghiepId] = 
+      //     Math.floor(Math.random() * (3 - 0 + 1)) + 0; 
       //   }
       
       for (let i = 0; i < this.Questions.length; i++) {
-        if (!this.quesNav[i,this.Questions[i].BaiDanhGiaDinhHuongNgheNghiepId]) {
+        if (this.quesNav[i,this.Questions[i].BaiDanhGiaDinhHuongNgheNghiepId] < 0 && this.quesNav[i,this.Questions[i].BaiDanhGiaDinhHuongNgheNghiepId] > 3) {
           this.isComplete = false;
           break;
         }
@@ -109,7 +119,7 @@ export default {
       }
       else {
         for (let i = 0; i < this.Questions.length; i++) {
-          axios.post("https://localhost:44326/api/KetQuaBaiDanhGia", {
+          axios.post(this.fit4uURL + "/api/KetQuaBaiDanhGia", {
             MucDo: ""+ this.quesNav[i,this.Questions[i].BaiDanhGiaDinhHuongNgheNghiepId],
             MSSV: this.mssv,
             BaiDanhGiaDinhHuongNgheNghiepId: this.Questions[i].BaiDanhGiaDinhHuongNgheNghiepId
@@ -126,7 +136,9 @@ export default {
         else {
           this.alertClass.color = 'blue';
           this.alertContent = 'Đã lưu câu trả lời của bạn!';
-          window.location = "/Result";
+          localStorage.Tested = true;
+          this.goToResult(); //delay
+          
         }
 
       }

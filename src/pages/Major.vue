@@ -12,46 +12,11 @@
                       </div>
                       <div class="u-expanded-width u-list u-list-1">
                         <div class="u-repeater u-repeater-1">
-                          <div class="u-container-style u-list-item u-repeater-item">
+                          <div class="u-container-style u-list-item u-repeater-item" v-for="(cn, index) in ListCN" :key="index">
                             <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-4">
-                              <h5 class="u-custom-font u-font-roboto-slab u-text u-text-default u-text-2"><span class="u-icon u-major-icon"><img src="../assets/images/knowledge.png" alt=""></span>
-                                <a class="u-btn u-button-link u-button-style u-none u-text-hover-palette-1-dark-1 u-btn-major" @click="setMajorID(7480107)">Công nghệ Tri thức </a></h5>
-                            </div>
-                          </div>
-                          <div class="u-container-style u-list-item u-repeater-item">
-                            <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-5">
-                              <h5 class="u-custom-font u-font-roboto-slab u-text u-text-default u-text-3"><span class="u-icon u-major-icon"><img src="../assets/images/database.png" alt=""></span>
-                                <a class="u-btn u-button-link u-button-style u-none u-text-hover-palette-1-dark-1 u-btn-major" @click="setMajorID(7480104)">Hệ thống Thông tin</a></h5>
-                            </div>
-                          </div>
-                          <div class="u-container-style u-list-item u-repeater-item">
-                            <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-7">
-                              <h5 class="u-custom-font u-font-roboto-slab u-text u-text-default u-text-5"><span class="u-icon u-major-icon"><img src="../assets/images/science.png" alt=""></span>
-                                <a class="u-btn u-button-link u-button-style u-none u-text-hover-palette-1-dark-1 u-btn-major" @click="setMajorID(7480106)">Khoa học Dữ liệu</a></h5>
-                            </div>
-                          </div>
-                          <div class="u-container-style u-list-item u-repeater-item">
-                            <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-8">
-                              <h5 class="u-custom-font u-font-roboto-slab u-text u-text-default u-text-6"><span class="u-icon u-major-icon"><img src="../assets/images/computer.png" alt=""></span>
-                                <a class="u-btn u-button-link u-button-style u-none u-text-hover-palette-1-dark-1 u-btn-major" @click="setMajorID(7480101)">Khoa học Máy tính</a></h5>
-                            </div>
-                          </div>
-                          <div class="u-container-style u-list-item u-repeater-item">
-                            <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-6">
-                              <h5 class="u-custom-font u-font-roboto-slab u-text u-text-default u-text-4"><span class="u-icon u-major-icon"><img src="../assets/images/coding.png" alt=""></span>
-                                <a class="u-btn u-button-link u-button-style u-none u-text-hover-palette-1-dark-1 u-btn-major" @click="setMajorID(7480103)">Kỹ thuật Phần mềm</a></h5>
-                            </div>
-                          </div>
-                          <div class="u-container-style u-list-item u-repeater-item">
-                            <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-9">
-                              <h5 class="u-custom-font u-font-roboto-slab u-text u-text-default u-text-7"><span class="u-icon u-major-icon"><img src="../assets/images/network.png" alt=""></span>
-                                <a class="u-btn u-button-link u-button-style u-none u-text-hover-palette-1-dark-1 u-btn-major" @click="setMajorID(7480102)">Mạng máy tính &amp; Viễn thông</a></h5>
-                            </div>
-                          </div>
-                          <div class="u-container-style u-list-item u-repeater-item">
-                            <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-10">
-                              <h5 class="u-custom-font u-font-roboto-slab u-text u-text-default u-text-8"><span class="u-icon u-major-icon"><img src="../assets/images/vision.png" alt=""></span>
-                                <a class="u-btn u-button-link u-button-style u-none u-text-hover-palette-1-dark-1 u-btn-major" @click="setMajorID(7480105)">Thị giác Máy tính</a></h5>
+                              <h5 class="u-custom-font u-font-roboto-slab u-text u-text-default u-text-2"><span class="u-icon u-major-icon"><img src="../assets/images/code.png" alt=""></span>
+                                <a v-if="cn.ChuyenNganhId === majorID" class="u-btn u-button-link u-none u-text-hover-palette-1-dark-1 u-btn-major" style="color: #db545a;" @click="setMajorID(cn.ChuyenNganhId)"> {{cn.TenChuyenNganh}} </a>
+                                <a v-else class="u-btn u-button-link u-none u-text-hover-palette-1-dark-1 u-btn-major" @click="setMajorID(cn.ChuyenNganhId)"> {{cn.TenChuyenNganh}} </a></h5>
                             </div>
                           </div>
                         </div>
@@ -151,8 +116,7 @@
                       <h4 class="u-custom-font u-font-roboto-slab u-text u-text-default u-text-palette-1-dark-2 u-text-1">Định hướng nghiên cứu</h4>
                       <div v-for="dh in DHNC" :key="dh">
                         <p class="u-custom-font u-font-merriweather u-text u-text-2"> {{dh.TenDinhHuong}}: </p>
-                        <p class="u-custom-font u-font-merriweather u-text u-text-21"> - {{dh.ChuDeNghienCuu}}: {{dh.DuAnNghienCuu}}</p>
-                        <!-- <p class="u-custom-font u-font-merriweather u-text u-text-22"> {{dh.DuAnNghienCuu}} </p> -->
+                        <p class="u-custom-font u-font-merriweather u-text u-text-21" v-if="dh.ChuDeNghienCuu != null"> - {{dh.ChuDeNghienCuu}}: {{dh.DuAnNghienCuu}}</p>
                       </div>
                     </div>
                   </div>
@@ -163,8 +127,10 @@
                   <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-3">
                     <div class="u-container-layout u-container-layout-3">
                       <h4 class="u-custom-font u-font-roboto-slab u-text u-text-default u-text-palette-1-dark-2 u-text-3">Các học phần bắt buộc của chuyên ngành</h4>
+                      <div  class="mh-container">
                       <div v-for="mh in MonHoc" :key="mh">
-                        <p class="u-custom-font u-font-merriweather u-text u-text-4">- {{mh.TenMonHoc}} </p>
+                        <p class="u-custom-font u-font-merriweather u-text u-text-4">{{mh.TenMonHoc}} </p>
+                      </div>
                       </div>
                     </div>
                   </div>
@@ -197,11 +163,13 @@ export default {
     data() {
       return {
         majorID: '',
+        ListCN: [],
         ChuyenNganh: [],
         linkVid: '',
         CHNN: [],
         DHNC: [],
-        MonHoc: []
+        MonHoc: [],
+        fit4uURL: 'https://fit4u-admin.somee.com'
       }
     },
 
@@ -209,33 +177,40 @@ export default {
       setMajorID(id) {
         localStorage.MajorId = id,
         this.majorID = localStorage.MajorId,
+        this.getListChuyenNganh(),
         this.getChuyenNganh(),
         this.getCoHoiNgheNghiep(),
         this.getDinhHuongNghienCuu(),
         this.getMonHocBatBuoc()
       },
 
+    getListChuyenNganh() {
+        axios.get(this.fit4uURL + "/api/ChuyenNganh").then((response) => {
+          this.ListCN = response.data;
+        });
+      },
+
       getChuyenNganh() {
-        axios.get("https://localhost:44326/api/ChuyenNganh/" + this.majorID).then((response) => {
+        axios.get(this.fit4uURL + "/api/ChuyenNganh/" + this.majorID).then((response) => {
           this.ChuyenNganh = response.data;
           this.linkVid = "https://www.youtube.com/embed/" + this.ChuyenNganh.LinkVideo + "?mute=1&amp;showinfo=0&amp;controls=0&amp;start=0";
         });
       },
 
       getCoHoiNgheNghiep() {
-        axios.get("https://localhost:44326/api/CoHoiNgheNghiepChuyenNganh/" + this.majorID).then((response) => {
+        axios.get(this.fit4uURL + "/api/CoHoiNgheNghiepChuyenNganh/" + this.majorID).then((response) => {
           this.CHNN = response.data;
         });
       },
 
       getDinhHuongNghienCuu() {
-        axios.get("https://localhost:44326/api/DinhHuongNghienCuu/" + this.majorID).then((response) => {
+        axios.get(this.fit4uURL + "/api/DinhHuongNghienCuu/" + this.majorID).then((response) => {
           this.DHNC = response.data;
         });
       },
 
       getMonHocBatBuoc() {
-        axios.get("https://localhost:44326/api/MonHocChuyenNganh/" + this.majorID).then((response) => {
+        axios.get(this.fit4uURL + "/api/MonHocChuyenNganh/" + this.majorID).then((response) => {
           this.MonHoc = response.data;
         });
       }
@@ -243,6 +218,7 @@ export default {
 
     mounted() {
       this.majorID = localStorage.MajorId,
+      this.getListChuyenNganh();
       this.getChuyenNganh();
       this.getCoHoiNgheNghiep();
       this.getDinhHuongNghienCuu();

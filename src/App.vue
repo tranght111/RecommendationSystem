@@ -29,13 +29,8 @@
                 <a class="u-border-3 u-border-active-palette-1-light-1 u-border-hover-palette-1-light-1 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" style="padding: 8px 36px;">Chuyên ngành&nbsp;<i class="fa fa-caret-down" aria-hidden="true"></i></a>
                 <div class="u-nav-popup">
                   <ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-12 u-nav-2">
-                    <li class="u-nav-item"><a class="u-active-palette-1-light-2 u-button-style u-hover-custom-color-6 u-nav-link u-palette-1-dark-2" @click="setMajorId(7480107)" href="/Major" target="_blank">Công nghệ Tri thức</a>
-                    </li><li class="u-nav-item"><a class="u-active-palette-1-light-2 u-button-style u-hover-custom-color-6 u-nav-link u-palette-1-dark-2" @click="setMajorId(7480104)" href="/Major" target="_blank">Hệ thống Thông tin</a>
-                    </li><li class="u-nav-item"><a class="u-active-palette-1-light-2 u-button-style u-hover-custom-color-6 u-nav-link u-palette-1-dark-2" @click="setMajorId(7480106)" href="/Major" target="_blank">Khoa học Dữ liệu</a>
-                    </li><li class="u-nav-item"><a class="u-active-palette-1-light-2 u-button-style u-hover-custom-color-6 u-nav-link u-palette-1-dark-2" @click="setMajorId(7480101)" href="/Major" target="_blank">Khoa học Máy tính</a>
-                    </li><li class="u-nav-item"><a class="u-active-palette-1-light-2 u-button-style u-hover-custom-color-6 u-nav-link u-palette-1-dark-2" @click="setMajorId(7480103)" href="/Major" target="_blank">Kỹ thuật Phần mềm</a>
-                    </li><li class="u-nav-item"><a class="u-active-palette-1-light-2 u-button-style u-hover-custom-color-6 u-nav-link u-palette-1-dark-2" @click="setMajorId(7480102)" href="/Major" target="_blank">Mạng máy tính &amp; Viễn thông</a>
-                    </li><li class="u-nav-item"><a class="u-active-palette-1-light-2 u-button-style u-hover-custom-color-6 u-nav-link u-palette-1-dark-2" @click="setMajorId(7480105)" href="/Major" target="_blank">Thị giác Máy tính</a>
+                    <li class="u-nav-item" v-for="(cn, index) in ChuyenNganh" :key="index">
+                      <a class="u-active-palette-1-light-2 u-button-style u-hover-custom-color-6 u-nav-link u-palette-1-dark-2" @click="setMajorId(cn.ChuyenNganhId)" href="/Major" target="_blank"> {{cn.TenChuyenNganh}} </a>
                     </li>
                   </ul>
                 </div>
@@ -67,39 +62,9 @@
                   <h2 class="u-align-left u-custom-font u-font-merriweather u-subtitle u-text u-text-palette-1-dark-1 u-text-2">Chuyên ngành</h2>
                   <div class="u-list u-list-1">
                     <div class="u-repeater u-repeater-1">
-                      <div class="u-container-style u-list-item u-repeater-item">
+                      <div class="u-container-style u-list-item u-repeater-item" v-for="(cn, index) in ChuyenNganh" :key="index">
                         <div class="u-container-layout u-similar-container u-container-layout-3">
-                          <p class="u-text u-custom-font u-font-merriweather u-text-default u-text-3">Công nghệ Tri thức</p>
-                        </div>
-                      </div>
-                      <div class="u-container-style u-list-item u-repeater-item">
-                        <div class="u-container-layout u-similar-container u-container-layout-4">
-                          <p class="u-text u-custom-font u-font-merriweather u-text-default u-text-4">Hệ thống Thông tin</p>
-                        </div>
-                      </div>
-                      <div class="u-container-style u-list-item u-repeater-item">
-                        <div class="u-container-layout u-similar-container u-container-layout-5">
-                          <p class="u-text u-custom-font u-font-merriweather u-text-default u-text-5">Kỹ thuật Phần mềm</p>
-                        </div>
-                      </div>
-                      <div class="u-container-style u-list-item u-repeater-item">
-                        <div class="u-container-layout u-similar-container u-container-layout-6">
-                          <p class="u-text u-custom-font u-font-merriweather u-text-default u-text-6">Khoa học Dữ liệu</p>
-                        </div>
-                      </div>
-                      <div class="u-container-style u-list-item u-repeater-item">
-                        <div class="u-container-layout u-similar-container u-container-layout-7">
-                          <p class="u-text u-custom-font u-font-merriweather u-text-default u-text-7">Khoa học Máy tính</p>
-                        </div>
-                      </div>
-                      <div class="u-container-style u-list-item u-repeater-item">
-                        <div class="u-container-layout u-similar-container u-container-layout-8">
-                          <p class="u-text u-custom-font u-font-merriweather u-text-default u-text-8">Mạng máy tính &amp; Viễn thông</p>
-                        </div>
-                      </div>
-                      <div class="u-container-style u-list-item u-repeater-item">
-                        <div class="u-container-layout u-similar-container u-container-layout-9">
-                          <p class="u-text u-custom-font u-font-merriweather u-text-default u-text-9">Thị giác Máy tính</p>
+                          <a class="u-text u-custom-font u-font-merriweather u-text-default u-text-3" @click="setMajorId(cn.ChuyenNganhId)" href="/Major" target="_blank"> {{cn.TenChuyenNganh}} </a>
                         </div>
                       </div>
                     </div>
@@ -142,13 +107,33 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   name: 'App',
+
+  data(){
+    return{
+      ChuyenNganh: [],
+      fit4uURL: 'https://fit4u-admin.somee.com'
+
+    }
+  },
+
+  mounted(){
+    this.getChuyenNganh();
+  },
 
   methods: {
     setMajorId(id) {
       localStorage.MajorId = id;
-    }
+    },
+
+    getChuyenNganh() {
+        axios.get(this.fit4uURL + "/api/ChuyenNganh").then((response) => {
+          this.ChuyenNganh = response.data;
+        });
+      },
   }
 }
 </script>
@@ -160,6 +145,7 @@ export default {
 @import './assets/css/jquery-ui.css';
 @import './assets/css/font-awesome.min.css';
 @import './assets/css/metismenu.min.css';
+/* @import './assets/js/popper.min.js'; */
 
 @import './assets/css/nicepage.css';
 @import './assets/css/homepage.css';

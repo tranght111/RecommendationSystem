@@ -133,7 +133,9 @@ export default {
         inputAlerts:[],
         isChangeMssv: false,
         isUploadFile: false,
-        MssvStyle: ''
+        MssvStyle: '',
+        fit4uURL: //'https://localhost:44326'
+                  'https://fit4u-admin.somee.com'
       }
     },
 
@@ -154,7 +156,7 @@ export default {
       },
 
       getMonHocXetChuyenNganh() {
-        axios.get("https://localhost:44326/api/MonHocCSNvaToan?selectlatest=true").then((response)=>{
+        axios.get(this.fit4uURL + "/api/MonHocCSNvaToan?selectlatest=true").then((response)=>{
             this.MonHocs = response.data;
         });
         
@@ -168,28 +170,26 @@ export default {
           this.MssvStyle = this.inputAlertClass;
         }
         if (this.fileDiem != null && this.isChangeMssv && this.isUploadFile) {
-          axios.post("https://localhost:44326/api/SinhVien?mssv=" + localStorage.SMssv);
+          axios.post(this.fit4uURL + "/api/SinhVien?mssv=" + localStorage.SMssv);
 
-          axios.post("https://localhost:44326/api/ReadStudentExcelFile?MSSV=" + localStorage.SMssv, formData,{
+          axios.post(this.fit4uURL + "/api/ReadStudentExcelFile?MSSV=" + localStorage.SMssv, formData,{
             headers: {
               'Content-Type': 'multipart/form-data'
             }
-          }).then((response) => {
-                if (response.data){
+          })
                   this.alertClass.color = 'blue';
                   this.alertContent = 'Đã lưu thông tin điểm của bạn!';
-                  window.location = "/Test";
-                }
-                else {
-                  this.alertClass.color = 'red';
-                  this.alertContent = 'Đã xảy ra lỗi, vui lòng thử lại!';
-                }
-            });
+                  this.goToTest();
+            
         }
         else {
           this.alertClass.color = 'red';
           this.alertContent = 'Vui lòng nhập đầy đủ thông tin!';
         }
+      },
+
+      goToTest(){
+        setTimeout(() => window.location = "/Test", 1500)
       },
 
       submitDiem(){
@@ -211,10 +211,10 @@ export default {
         }
         else if (this.isComplete && this.isChangeMssv)
         {
-          axios.post("https://localhost:44326/api/SinhVien?mssv=" + localStorage.SMssv);
+          axios.post(this.fit4uURL + "/api/SinhVien?mssv=" + localStorage.SMssv);
 
           for (let i = 0; i < this.MonHocs.length; i++) {
-            axios.post("https://localhost:44326/api/Diem", {
+            axios.post(this.fit4uURL + "/api/Diem", {
               MonHocId: this.MonHocs[i].MonHocId,
               MSSV: localStorage.SMssv,
               DiemMH: this.Diem[this.MonHocs[i].MonHocId]
@@ -223,8 +223,7 @@ export default {
           this.alertClass.color = 'blue';
           this.alertContent = 'Đã lưu thông tin điểm của bạn!';
 
-          window.location = "/Test";
-          this.isComplete = false;
+          this.goToTest();
         }
           
         }
