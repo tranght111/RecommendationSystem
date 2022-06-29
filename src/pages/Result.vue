@@ -4,7 +4,8 @@
     <a class="u-custom-font u-font-merriweather"> Xin chào </a>
     <a class="u-custom-font u-font-courier-new u-mssv" style="color: #db545a;"> {{mssv}} </a>
     <a class="u-custom-font u-font-merriweather">! {{TextShowing}}  </a> <br>
-    <div v-if="isReady === false" class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    <div v-if="isReady === true && slKQ === slCN"> </div>
+    <div v-else class="lds-roller" v-bind="getRecommandtionResult()"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
   </div>
   <div class="container-fluid">
       <div class="row">
@@ -107,14 +108,17 @@ export default {
             name: 'percent',
             data: [],
           }],
-      mssv : localStorage.SMssv,
+      mssv: localStorage.SMssv,
       isReady: false,
+      slCN: parseInt(localStorage.SLChuyenNganh),
+      slKQ: 0,
       Majors: [],
       MajorNames: [],
       Percents: [],
       fixNum: 0,
       TextShowing: 'Hệ thống đang tính kết quả ...',
       isTested: localStorage.Tested,
+      kmeansStatus: localStorage.KMeansStatus,
       fit4uURL: //'https://localhost:44326'
                 'https://fit4u-admin.somee.com'
     };
@@ -147,14 +151,14 @@ export default {
     },
 
     getRecommandtionResult(){
-      axios.get(this.fit4uURL + "/api/KetQuaChuyenNganh/" + this.mssv + "?istested=" + this.isTested).then((response)=>{
+        axios.get(this.fit4uURL + "/api/KetQuaChuyenNganh/" + this.mssv + "?istested=" + this.isTested).then((response)=>{
             this.Majors = response.data;
+            this.slKQ = this.Majors.length;
             this.TextShowing = 'Gợi ý chuyên ngành dành cho bạn là:';
             this.getChartData();
             this.sortMajors();
             this.isReady = true;
         });
-        
     },
 
     sortMajors(){

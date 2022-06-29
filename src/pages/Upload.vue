@@ -233,10 +233,8 @@ export default {
       },
 
       postKMeans(){
-        localStorage.KMeansStatus = "";
         axios.post(this.fit4uURL + "/api/KetQuaChuyenNganh?mssv=" + localStorage.SMssv).then((response) => {
-          localStorage.KMeansStatus = response.data;
-          alert("Kmeans: " + localStorage.KMeansStatus)
+          
         })
       },
 
