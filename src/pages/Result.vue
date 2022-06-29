@@ -4,9 +4,7 @@
     <a class="u-custom-font u-font-merriweather"> Xin chào </a>
     <a class="u-custom-font u-font-courier-new u-mssv" style="color: #db545a;"> {{mssv}} </a>
     <a class="u-custom-font u-font-merriweather">! {{TextShowing}}  </a> <br>
-    <!-- <div> <a class="loader"></a> </div>
-    <div> <a class="loader"></a> </div>
-    <div> <a class="loader"></a> </div> -->
+    <div v-if="isReady === false" class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
   </div>
   <div class="container-fluid">
       <div class="row">
@@ -22,10 +20,12 @@
               <div class="item1" v-if="index === 0">
                 <p class="title"> {{index + 1}}. {{m.TenChuyenNganh}} - phù hợp {{m.TongPhanTram}}%</p>
                 <p class="note">{{m.GioiThieuChuyenNganh}}</p>
+                <a class="see-more-1" @click="setMajorId(m.ChuyenNganhId)" href="/Major" target="_blank"> Tìm hiểu thêm </a>
               </div>
               <div class="item2" v-else> 
                 <p class="title"> {{index + 1}}. {{m.TenChuyenNganh}} - phù hợp {{m.TongPhanTram}}%</p>
                 <p class="note">{{m.GioiThieuChuyenNganh}}</p>
+                <a class="see-more" @click="setMajorId(m.ChuyenNganhId)" href="/Major" target="_blank"> Tìm hiểu thêm </a>
               </div>
             </div>
           </div>
@@ -59,7 +59,7 @@ export default {
             },
             plotOptions: {
               radar: {
-                size: 230,
+                size: 210,
                 polygons: {
                   strokeColors: '#e9e9e9',
                   fill: {
@@ -108,48 +108,51 @@ export default {
             data: [],
           }],
       mssv : localStorage.SMssv,
-      hptPosted: false,
-      suggestPosted: false,
+      isReady: false,
       Majors: [],
       MajorNames: [],
       Percents: [],
+      fixNum: 0,
       TextShowing: 'Hệ thống đang tính kết quả ...',
+      isTested: localStorage.Tested,
       fit4uURL: //'https://localhost:44326'
                 'https://fit4u-admin.somee.com'
     };
   }, //end data
 
   mounted(){
-    if (localStorage.Tested == true) {
+    if (this.isTested == "true") {
       this.postHuongPhatTrienSV();
     }
-    else this.postSuggestion();
+    else { 
+      this.deleteOldTestResult();
+    }
   },
 
   methods:{
-    postHuongPhatTrienSV(){
-      axios.post(this.fit4uURL + "/api/HuongPhatTrienSV?mssv=" + this.mssv).then((response) => {
-        this.hptPosted = true;
-        
-        this.postSuggestion();
+    setMajorId(id) {
+      localStorage.MajorId = id;
+    },
+
+    deleteOldTestResult(){
+      axios.delete(this.fit4uURL + "/api/KetQuaBaiDanhGia/" + this.mssv).then((response) => {
+        this.getRecommandtionResult();
       })
     },
 
-    postSuggestion(){
-      axios.post(this.fit4uURL + "/api/KetQuaChuyenNganh?mssv=" + this.mssv).then((response) => {
-        this.suggestPosted = true;
-        
+    postHuongPhatTrienSV(){
+      axios.post(this.fit4uURL + "/api/HuongPhatTrienSV?mssv=" + this.mssv).then((response) => {
         this.getRecommandtionResult();
       })
     },
 
     getRecommandtionResult(){
-      axios.get(this.fit4uURL + "/api/KetQuaChuyenNganh/" + this.mssv).then((response)=>{
+      axios.get(this.fit4uURL + "/api/KetQuaChuyenNganh/" + this.mssv + "?istested=" + this.isTested).then((response)=>{
             this.Majors = response.data;
             this.TextShowing = 'Gợi ý chuyên ngành dành cho bạn là:';
             this.getChartData();
             this.sortMajors();
-            
+            this.isReady = true;
         });
         
     },
@@ -170,7 +173,10 @@ export default {
     getChartData(){
       for (let i = 0; i < this.Majors.length; i++){
         this.MajorNames[i] = this.Majors[i].TenChuyenNganh;
-        this.Percents[i] = this.Majors[i].PhanTram;
+        this.fixNum = this.Majors[i].TongPhanTram;
+        this.fixNum = this.fixNum.toFixed();
+        this.Percents[i] = this.fixNum;
+        this.Majors[i].TongPhanTram = this.fixNum;
         
       };
       this.series.forEach((serie) => {

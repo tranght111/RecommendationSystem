@@ -120,7 +120,7 @@ export default {
         }
       }
 
-      if (!this.isComplete) {
+      if (this.isComplete == false) {
         this.alertQuesClass = this.alertColor;
         this.alertClass.color = 'red';
         this.alertContent = 'Vui lòng trả lời tất cả câu hỏi để sang bước tiếp theo!';
@@ -137,7 +137,7 @@ export default {
           })
         }
 
-        if (!this.isComplete) {
+        if (this.isComplete == false) {
           this.alertClass.color = 'red';
           this.alertContent = 'Đã xảy ra lỗi, vui lòng thử lại!';
         }
