@@ -132,6 +132,7 @@ export default {
     getChuyenNganh() {
         axios.get(this.fit4uURL + "/api/ChuyenNganh").then((response) => {
           this.ChuyenNganh = response.data;
+          localStorage.SLChuyenNganh = this.ChuyenNganh.length;
         });
       },
   }
