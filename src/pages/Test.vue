@@ -43,6 +43,7 @@
           <div class="u-align-center u-next" style="padding: 0 0 20px;" @click="commitAnswers()">
             <a class="u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-custom-font u-font-merriweather u-btn-next">Lưu</a>
           </div>
+          <div v-if="questionsLength != 0 && postCount >= questionsLength" v-bind="WaitPostResult()"> </div>
         </div>
       </div>
     </div>
@@ -58,6 +59,7 @@ export default {
   data () {
     return {
       Questions: [],
+      questionsLength: 0,
       quesNav: [,],
       alertColor: {
         background: 'darkred',
@@ -71,6 +73,7 @@ export default {
         },
       alertContent: '',
       action: false,
+      postCount: 0,
       fit4uURL: //'https://localhost:44326'
                 'https://fit4u-admin.somee.com'
     };
@@ -85,12 +88,13 @@ export default {
     refreshData(){
         axios.get(this.fit4uURL + "/api/BaiDanhGiaDinhHuongNgheNghiep").then((response)=>{
             this.Questions = response.data;
+            this.questionsLength = this.Questions.length;
             this.setAnswer();
         });
     },
 
     setAnswer(){
-      for (let i = 0; i < this.Questions.length; i++){
+      for (let i = 0; i < this.questionsLength; i++){
         this.quesNav[i, this.Questions[i].BaiDanhGiaDinhHuongNgheNghiepId] = -1;
       }
     },
@@ -100,19 +104,19 @@ export default {
     },
 
     goToResult(){
-      setTimeout(() => window.location = "/Result", 1500)
+      setTimeout(() => window.location = "/Result", 1000)
     },
 
     commitAnswers() {
       this.isComplete = true;
 
       //test
-      // for (let i = 0; i < this.Questions.length; i++) {
+      // for (let i = 0; i < this.questionsLength; i++) {
       //     this.quesNav[i, this.Questions[i].BaiDanhGiaDinhHuongNgheNghiepId] = 
       //     Math.floor(Math.random() * (3 - 0 + 1)) + 0; 
       //   }
       
-      for (let i = 0; i < this.Questions.length; i++) {
+      for (let i = 0; i < this.questionsLength; i++) {
         let t = this.quesNav[i,this.Questions[i].BaiDanhGiaDinhHuongNgheNghiepId];
         if ( t != '0' && t != '1' && t != '2' && t != '3'){ 
           this.isComplete = false;
@@ -126,30 +130,28 @@ export default {
         this.alertContent = 'Vui lòng trả lời tất cả câu hỏi để sang bước tiếp theo!';
       }
       else {
-        for (let i = 0; i < this.Questions.length; i++) {
+        for (let i = 0; i < this.questionsLength; i++) {
           axios.post(this.fit4uURL + "/api/KetQuaBaiDanhGia", {
             MucDo: ""+ this.quesNav[i,this.Questions[i].BaiDanhGiaDinhHuongNgheNghiepId],
             MSSV: this.mssv,
             BaiDanhGiaDinhHuongNgheNghiepId: this.Questions[i].BaiDanhGiaDinhHuongNgheNghiepId
           })
-          .then((Response) => {
-            if (Response.data == "") this.isComplete = false;
+          .then((response) => {
+            this.postCount = this.postCount + 1;
+            console.log(this.postCount);
           })
         }
 
-        if (this.isComplete == false) {
-          this.alertClass.color = 'red';
-          this.alertContent = 'Đã xảy ra lỗi, vui lòng thử lại!';
-        }
-        else {
-          this.alertClass.color = 'blue';
+        this.alertClass.color = 'green';
+        this.alertContent = 'Đang lưu câu trả lời...';
+      }
+    },
+
+    WaitPostResult() {
+      this.alertClass.color = 'blue';
           this.alertContent = 'Đã lưu câu trả lời của bạn!';
           localStorage.Tested = true;
           this.goToResult(); //delay
-          
-        }
-
-      }
     }
   }
 }

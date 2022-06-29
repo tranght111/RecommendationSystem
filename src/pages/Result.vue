@@ -4,8 +4,9 @@
     <a class="u-custom-font u-font-merriweather"> Xin chào </a>
     <a class="u-custom-font u-font-courier-new u-mssv" style="color: #db545a;"> {{mssv}} </a>
     <a class="u-custom-font u-font-merriweather">! {{TextShowing}}  </a> <br>
-    <div v-if="isReady === true && slKQ === slCN"> </div>
-    <div v-else class="lds-roller" v-bind="getRecommandtionResult()"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div v-if="isReady != true" class="lds-roller">
+        <div v-if="isReadyToGet === true" v-bind="getRecommandtionResult()"></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+      </div>
   </div>
   <div class="container-fluid">
       <div class="row">
@@ -60,7 +61,7 @@ export default {
             },
             plotOptions: {
               radar: {
-                size: 210,
+                size: 200,
                 polygons: {
                   strokeColors: '#e9e9e9',
                   fill: {
@@ -110,15 +111,16 @@ export default {
           }],
       mssv: localStorage.SMssv,
       isReady: false,
+      isReadyToGet: false,
       slCN: parseInt(localStorage.SLChuyenNganh),
       slKQ: 0,
       Majors: [],
+      Temps: [],
       MajorNames: [],
       Percents: [],
       fixNum: 0,
       TextShowing: 'Hệ thống đang tính kết quả ...',
       isTested: localStorage.Tested,
-      kmeansStatus: localStorage.KMeansStatus,
       fit4uURL: //'https://localhost:44326'
                 'https://fit4u-admin.somee.com'
     };
@@ -129,7 +131,7 @@ export default {
       this.postHuongPhatTrienSV();
     }
     else { 
-      this.deleteOldTestResult();
+      // this.deleteOldTestResult();
     }
   },
 
@@ -141,23 +143,28 @@ export default {
     deleteOldTestResult(){
       axios.delete(this.fit4uURL + "/api/KetQuaBaiDanhGia/" + this.mssv).then((response) => {
         this.getRecommandtionResult();
+        this.isReadyToGet = true;
       })
     },
 
     postHuongPhatTrienSV(){
       axios.post(this.fit4uURL + "/api/HuongPhatTrienSV?mssv=" + this.mssv).then((response) => {
         this.getRecommandtionResult();
+        this.isReadyToGet = true;
       })
     },
 
     getRecommandtionResult(){
         axios.get(this.fit4uURL + "/api/KetQuaChuyenNganh/" + this.mssv + "?istested=" + this.isTested).then((response)=>{
-            this.Majors = response.data;
-            this.slKQ = this.Majors.length;
-            this.TextShowing = 'Gợi ý chuyên ngành dành cho bạn là:';
-            this.getChartData();
-            this.sortMajors();
-            this.isReady = true;
+            this.Temps = response.data;
+            this.slKQ = this.Temps.length;
+            if (this.slKQ == this.slCN) {
+              this.Majors = this.Temps;
+              this.TextShowing = 'Gợi ý chuyên ngành dành cho bạn là:';
+              this.getChartData();
+              this.sortMajors();
+              this.isReady = true;
+            }
         });
     },
 
