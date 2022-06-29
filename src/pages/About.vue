@@ -1,12 +1,15 @@
 <template>
    <section class="u-align-center u-clearfix u-image u-lightbox u-shading u-about-section-1" id="carousel_848c" data-image-width="1590" data-image-height="800">
       <div class="u-clearfix u-sheet u-valign-middle-xs u-sheet-1">
-        <h1 class="u-align-left u-custom-font u-font-merriweather u-text u-text-grey-80 u-title u-text-1"> Website <span class="u-text-palette-1-dark-2">FIT&nbsp; U</span>
-          <br>gợi&nbsp;ý chuyên ngành cho sinh viên&nbsp;
+        <h1 class="u-align-left u-custom-font u-font-merriweather u-text u-text-grey-80 u-title u-text-1"> Website 
+          <span class="u-text-palette-1-dark-2">FIT</span>
+          <span class="u-custom-font u-font-roboto" style="color: #cc6666;">4</span>
+          <span class="u-text-palette-1-dark-2">U</span>
+          <br>gợi ý chuyên ngành cho sinh viên
         </h1>
-        <h1 class="u-custom-font u-font-roboto-slab u-text u-text-palette-2-base u-title u-text-2">4</h1>
+        <!-- <h1 class="u-custom-font u-font-roboto-slab u-text u-text-palette-2-base u-title u-text-2">4</h1> -->
         <p class="u-align-left u-custom-font u-font-roboto-slab u-text u-text-grey-90 u-text-3">
-          <span style="font-weight: 700;">FIT4U</span> gợi&nbsp;ý chuyên ngành phù hợp cho sinh viên ngành Công nghệ Thông tin trường&nbsp;Đại học Khoa học Tự nhiên dựa trên kết quả học tập của 4 học kỳ&nbsp;đầu tiên và&nbsp;định hướng nghề nghiệp của sinh viên.
+          <span style="font-weight: 700;">FIT4U</span> gợi ý chuyên ngành phù hợp cho sinh viên ngành Công nghệ Thông tin trường Đại học Khoa học Tự nhiên dựa trên kết quả học tập của 4 học kỳ đầu tiên và định hướng nghề nghiệp của sinh viên.
         </p>
       </div>
     </section>
@@ -25,9 +28,8 @@
                 <h4 class="u-align-left u-custom-font u-font-roboto-slab u-text u-text-palette-1-dark-2 u-text-1"><b>
                     <span class="u-text-grey-90">Vì sao chúng tôi xây dựng</span>&nbsp;FIT<span class="u-text-palette-2-base">4</span>U<span class="u-text-grey-90">?</span></b>
                 </h4>
-                <p class="u-align-justify u-custom-font u-font-roboto-slab u-text u-text-grey-90 u-text-2">Theo thống kê từ bộ phận tuyển sinh và hướng nghiệp của các trường đại học, cao đẳng, hàng năm có rất nhiều sinh viên bị buộc thôi học, bỏ học giữa chừng, không ra trường được, hoặc ra trường nhưng lại đi làm trái ngành,… Trong số này, có không ít sinh viên do chọn sai ngành/ chuyên ngành học dẫn đến mất động lực trong học tập và sau khi tốt nghiệp có thể làm trái ngành nghề được đào tạo, khó xin việc làm hoặc thậm chí là thất nghiệp,...&nbsp;<br>
+                <p class="u-align-justify u-custom-font u-font-roboto-slab u-text u-text-grey-90 u-text-2">Theo thống kê từ bộ phận tuyển sinh và hướng nghiệp của các trường đại học, cao đẳng, hàng năm có rất nhiều sinh viên bị buộc thôi học, bỏ học giữa chừng, không ra trường được, hoặc ra trường nhưng lại đi làm trái ngành,… Trong số này, có không ít sinh viên do chọn sai ngành/chuyên ngành học dẫn đến mất động lực trong học tập và sau khi tốt nghiệp có thể làm trái ngành nghề được đào tạo, khó xin việc làm hoặc thậm chí là thất nghiệp,...&nbsp;<br>
                   <br>Chính vì lẽ đó, với mục đích giúp các bạn sinh viên khoa Công nghệ Thông tin của trường Đại học Khoa học Tự nhiên có thể lựa chọn được chuyên ngành phù hợp với năng lực bản thân và hướng phát triển nghề nghiệp tương lai. Chúng tôi đã xây dựng ứng dụng web gợi ý chọn chuyên ngành cho sinh viên khoa Công nghệ Thông tin.
-&nbsp;
                 </p>
               </div>
             </div>
