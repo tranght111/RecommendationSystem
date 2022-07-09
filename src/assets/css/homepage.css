@@ -18,7 +18,7 @@
   font-size: 1.875rem;
   font-weight: 700;
   text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
-  margin: 70px 640px 0 10px;
+  margin: 70px 550px 0 0px;
 }
 
 .u-home-section-1 .u-btn-1 {
@@ -28,6 +28,7 @@
   font-size: 1.25rem;
   margin: 90px auto 60px 90px;
   padding: 10px 33px;
+  border-radius: 8px;
 }
 
 @media (max-width: 1199px) {
@@ -241,6 +242,7 @@
   transform: translateX(0px) translateY(0px) scale(1) rotate(0deg);
   margin: 42px auto 60px;
   padding: 10px 33px;
+  border-radius: 8px;
 }
 
 @media (max-width: 1199px) {

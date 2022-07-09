@@ -38,7 +38,7 @@
             <!-- End Answer -->
           </div> <!--End v-for -->
           <div class="u-align-center"><br>
-            <a :style="alertClass"> {{alertContent}} </a>
+            <a :style="alertClass" class="u-custom-font u-font-merriweather notice"> {{alertContent}} </a>
           </div>
           <div class="u-align-center u-next" style="padding: 0 0 20px;" @click="commitAnswers()">
             <a class="u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-custom-font u-font-merriweather u-btn-next">Lưu</a>
@@ -148,7 +148,7 @@ export default {
     },
 
     WaitPostResult() {
-      this.alertClass.color = 'blue';
+      this.alertClass.color = 'green';
           this.alertContent = 'Đã lưu câu trả lời của bạn!';
           localStorage.Tested = true;
           this.goToResult(); //delay

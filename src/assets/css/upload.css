@@ -308,3 +308,8 @@ input[type=text] {
 input[type=text]:focus {
   border: 2px solid #555;
 }
+
+.notice {
+  font-size: 20px;
+  font-weight: 500;
+}
