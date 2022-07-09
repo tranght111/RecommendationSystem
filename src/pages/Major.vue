@@ -114,10 +114,12 @@
                   <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-2">
                     <div class="u-container-layout u-container-layout-2">
                       <h4 class="u-custom-font u-font-roboto-slab u-text u-text-default u-text-palette-1-dark-2 u-text-1">Định hướng nghiên cứu</h4>
-                      <div v-for="dh in DHNC" :key="dh">
-                        <p class="u-custom-font u-font-merriweather u-text u-text-2"> {{dh.TenDinhHuong}}: </p>
-                        <p class="u-custom-font u-font-merriweather u-text u-text-21" v-if="dh.ChuDeNghienCuu != null"> - {{dh.ChuDeNghienCuu}}: {{dh.DuAnNghienCuu}}</p>
-                      </div>
+                      <dl v-for="dh in DHNC" :key="dh">
+                        <dt class="u-custom-font u-font-merriweather u-text u-text-20"> {{dh.TenDinhHuong}}: </dt>
+                        <dd class="u-custom-font u-font-merriweather u-text u-text-21" v-if="dh.ChuDeNghienCuu != null"> - {{dh.ChuDeNghienCuu}} 
+                          <a v-if="dh.DuAnNghienCuu != null">: {{dh.DuAnNghienCuu}} </a>
+                        </dd>
+                      </dl>
                     </div>
                   </div>
                 </div>

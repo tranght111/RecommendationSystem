@@ -134,3 +134,8 @@
   font-size: 1.25rem;
   padding: 10px 22px 10px 22px;
 }
+
+.notice {
+  font-size: 20px;
+  font-weight: 500;
+}

@@ -5,7 +5,7 @@
     <a class="u-custom-font u-font-courier-new u-mssv" style="color: #db545a;"> {{mssv}} </a>
     <a class="u-custom-font u-font-merriweather">! {{TextShowing}}  </a> <br>
       <div v-if="isReady != true" class="lds-roller">
-        <div v-if="isReadyToGet === true" v-bind="getRecommandtionResult()"></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
       </div>
   </div>
   <div class="container-fluid">
@@ -111,7 +111,6 @@ export default {
           }],
       mssv: localStorage.SMssv,
       isReady: false,
-      isReadyToGet: false,
       slCN: parseInt(localStorage.SLChuyenNganh),
       slKQ: 0,
       Majors: [],
@@ -131,7 +130,7 @@ export default {
       this.postHuongPhatTrienSV();
     }
     else { 
-      // this.deleteOldTestResult();
+      this.getRecommendationResult();
     }
   },
 
@@ -142,19 +141,17 @@ export default {
 
     deleteOldTestResult(){
       axios.delete(this.fit4uURL + "/api/KetQuaBaiDanhGia/" + this.mssv).then((response) => {
-        this.getRecommandtionResult();
-        this.isReadyToGet = true;
+        this.getRecommendationResult();
       })
     },
 
     postHuongPhatTrienSV(){
       axios.post(this.fit4uURL + "/api/HuongPhatTrienSV?mssv=" + this.mssv).then((response) => {
-        this.getRecommandtionResult();
-        this.isReadyToGet = true;
+        this.getRecommendationResult();
       })
     },
 
-    getRecommandtionResult(){
+    getRecommendationResult(){
         axios.get(this.fit4uURL + "/api/KetQuaChuyenNganh/" + this.mssv + "?istested=" + this.isTested).then((response)=>{
             this.Temps = response.data;
             this.slKQ = this.Temps.length;
@@ -164,6 +161,9 @@ export default {
               this.getChartData();
               this.sortMajors();
               this.isReady = true;
+            }
+            else {
+              this.getRecommendationResult();
             }
         });
     },

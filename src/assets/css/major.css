@@ -405,8 +405,10 @@
 
 .u-major-section-2 .u-image-1 {
   min-height: 465px;
+  max-height: 500px;
   background-image: url("../images/Studentswatchingwebinaroncomputer.jpg");
   background-position: 50.96% 50%;
+  margin-top: 80px;
 }
 
 .u-major-section-2 .u-container-layout-1 {
@@ -428,20 +430,27 @@
 }
 
 .u-major-section-2 .u-text-2 {
-  font-size: 1.2rem;
+  font-size: 1rem;
   line-height: 2rem;
   margin: 21px 0 0px;
 }
 
-.u-major-section-2 .u-text-21 {
+.u-major-section-2 .u-text-20 {
   font-size: 1.1rem;
+  line-height: 2rem;
+  margin: 21px 0 0px;
+  font-weight: 400px !important;
+}
+
+.u-major-section-2 .u-text-21 {
+  font-size: 1rem;
   line-height: 2rem;
   margin: 5px 0 10px 40px;
 }
 
 .u-major-section-2 .u-text-22 {
-  font-size: 1.2rem;
-  margin: 41px 0 0px 60px;
+  font-size: 1rem;
+  margin: 20px 0 0px 70px;
 }
 
 .u-major-section-2 .u-layout-cell-3 {
@@ -461,7 +470,7 @@
 }
 
 .u-major-section-2 .u-text-4 {
-  font-size: 1.2rem;
+  font-size: 1rem;
   line-height: 2rem;
   margin: 20px 0 0;
 }

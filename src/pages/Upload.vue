@@ -63,7 +63,7 @@
                   <div v-for="(mh, index) in MonHocs" :key="index">
                     <div class="point-input" v-if="index <= MonHocs.length/2 - 1">
                       <label :for="mh.MonHocId"> {{mh.TenMonHoc}} </label>
-                      <input type="number" min="0" max="10" :id="mh.MonHocId" placeholder="Nhập điểm" required v-model="Diem[mh.MonHocId]" :style="inputAlerts[mh.MonHocId]" @change="defaultInputClass(mh.MonHocId)" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"> 
+                      <input type="number" min="0" max="10" :id="mh.MonHocId" placeholder="Nhập điểm" v-model="Diem[index]" :style="inputAlerts[index]" @change="defaultInputClass(index)" required class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"> 
                     </div>
                   </div>
                 </div>
@@ -71,7 +71,7 @@
                   <div v-for="(mh, index) in MonHocs" :key="index">
                     <div class="point-input" v-if="index > MonHocs.length/2 - 1">
                       <label :for="mh.MonHocId"> {{mh.TenMonHoc}} </label>
-                      <input type="number" min="0" max="10" :id="mh.MonHocId" placeholder="Nhập điểm" required v-model="Diem[mh.MonHocId]" :style="inputAlerts[mh.MonHocId]" @change="defaultInputClass(mh.MonHocId)" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"> 
+                      <input type="number" min="0" max="10" :id="mh.MonHocId" placeholder="Nhập điểm" v-model="Diem[index]" :style="inputAlerts[index]" @change="defaultInputClass(index)" required class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"> 
                     </div>
                   </div>
                 </div>
@@ -80,7 +80,7 @@
             <!-- END PLAN 2 -->
             <div class="u-align-center">
               <br>
-              <a :style="alertClass"> {{alertContent}} </a><br>
+              <a :style="alertClass" class="u-custom-font u-font-merriweather notice"> {{alertContent}} </a><br>
               <div v-if="PlanPicked === 'Plan1'">
                 <input type="button" value="LƯU" v-on:click="submitFile()" class="u-btn u-btn-submit u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-4">
               </div>
@@ -154,7 +154,11 @@ export default {
 
       putDiemTBCSN(){
         axios.put(this.fit4uURL + "/api/SinhVien?mssv=" + localStorage.SMssv).then((response) => {
-          this.postKMeans();
+          this.alertClass.color = 'green';
+          this.alertContent = 'Đã lưu thông tin điểm của bạn!';
+
+          this.goToTest();
+          this.deleteOldSuggest();
         })
       },
 
@@ -166,6 +170,8 @@ export default {
           this.MssvStyle = this.inputAlertClass;
         }
         if (this.fileDiem != null && this.isChangeMssv==true && this.isUploadFile == true) {
+          this.alertClass.color = 'green';
+          this.alertContent = 'Đang lưu điểm...';
           axios.post(this.fit4uURL + "/api/SinhVien?mssv=" + localStorage.SMssv);
 
           axios.post(this.fit4uURL + "/api/ReadStudentExcelFile?MSSV=" + localStorage.SMssv, formData,{
@@ -176,9 +182,9 @@ export default {
             this.putDiemTBCSN();
           })
 
-          this.alertClass.color = 'blue';
-          this.alertContent = 'Đã lưu thông tin điểm của bạn!';
-          this.goToTest();
+          // this.alertClass.color = 'blue';
+          // this.alertContent = 'Đã lưu thông tin điểm của bạn!';
+          // this.goToTest();
             
         }
         else {
@@ -198,9 +204,9 @@ export default {
         }
 
         for (let i = 0; i < this.MonHocs.length; i++) {
-          if (!this.Diem[this.MonHocs[i].MonHocId]) {
+          if (!this.Diem[i] || this.Diem[i] < 0 || this.Diem[i] > 10) {
             this.isComplete = false;
-            this.inputAlerts[this.MonHocs[i].MonHocId] = this.inputAlertClass;
+            this.inputAlerts[i] = this.inputAlertClass;
           }
         }
         
@@ -210,31 +216,35 @@ export default {
         }
         else if (this.isComplete && this.isChangeMssv)
         {
+          this.alertClass.color = 'green';
+          this.alertContent = 'Đang lưu điểm...';
           //post SinhVien
           axios.post(this.fit4uURL + "/api/SinhVien?mssv=" + localStorage.SMssv);
-
-          for (let i = 0; i < this.MonHocs.length; i++) {
+          let resCount = 0;
+          for (let i = 0; i < this.Diem.length; i++) {
             axios.post(this.fit4uURL + "/api/Diem", {
               MonHocId: this.MonHocs[i].MonHocId,
               MSSV: localStorage.SMssv,
-              DiemMH: this.Diem[this.MonHocs[i].MonHocId]
+              DiemMH: this.Diem[i]
+            }).then((response) => {
+              resCount = resCount + 1;
+              console.log(resCount);
+              //Xu ly K-Means
+              if (resCount == this.Diem.length)
+                this.putDiemTBCSN();
             })
-          
-          //Xu ly K-Means
-          this.putDiemTBCSN();
-
-          this.alertClass.color = 'blue';
-          this.alertContent = 'Đã lưu thông tin điểm của bạn!';
-
-          this.goToTest();
+          }
         }
-          
-        }
+      },
+
+      deleteOldSuggest(){
+        axios.delete(this.fit4uURL + "/api/KetQuaChuyenNganh/" + localStorage.SMssv).then((response) => {
+          this.postKMeans();
+        })
       },
 
       postKMeans(){
         axios.post(this.fit4uURL + "/api/KetQuaChuyenNganh?mssv=" + localStorage.SMssv).then((response) => {
-          
         })
       },
 
